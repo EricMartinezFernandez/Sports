@@ -25,13 +25,14 @@ deportivos, o cualquier otro tipo de dispositivo móvil.
 [2]: 2
 # Redacción de la lista de requisitos.
 
-Se ha decidido realizar una aplicación deportiva en la que el ususario podrá seleccionar tres
-deportes distintos. Además de esto, el usuario podrá tener acceso a su historial de actividades
-las cuales se guardarán remotamente utilizano la herramienta **Firebase**.
-Seleccionando cada uno de los deportes el usuario podrá observar en un mapa por dónde se está moviendo,
+Se ha decidido realizar una aplicación deportiva en la que el ususario podrá tener acceso a las siguientes 
+funcionalidades:
+* Seleccionar tres deportes distintos. 
+* Podrá tener acceso a su historial de actividades las cuales se guardarán remotamente utilizano la herramienta **Firebase**.
+* Seleccionando cada uno de los deportes el usuario podrá observar en un mapa por dónde se está moviendo,
 el tiempo transcurrido de la actividad, la distancia y las calorías consumidas.
-Una vez parada la actividad se podrá guardar o descartar la actividad.
-Accediento al historial, se podrá observar la fecha de la actividad, distancia, tiempo, calorías y el mapa 
+* Una vez parada la actividad se podrá guardar o descartar.
+* Accediento al historial, se podrá observar la fecha de la actividad, distancia, tiempo, calorías y el mapa 
 con el recorrido realizado.
 
 [3]: 3 
