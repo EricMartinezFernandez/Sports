@@ -2,6 +2,7 @@
 Este  repositorio contiene toda la información sobre el proyecto de desarrollo de la AppSports creada por Eric y Jose.
 
 ## Primera fase: KickStar
+* ### Selección de la propuesta.
 
 >### Selección de la propuesta.
 >La selección ha sido la de tipo A por la familiarización al deporte de los creadores y por la gran demanda de este tipo 
