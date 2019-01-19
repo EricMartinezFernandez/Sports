@@ -2,6 +2,7 @@
 Este  repositorio contiene toda la información sobre el proyecto de desarrollo de la AppSports creada por Eric y Jose.
 
 ## Primera fase: KickStar
+
 * ### Selección de la propuesta.
   La selección ha sido la de tipo A por la familiarización al deporte de los creadores y por la gran demanda de este tipo 
   de productos de los usuario en el mercado de las aplicación móviles, bien sean diseñadas en smartphones, relojes
@@ -21,11 +22,23 @@ Este  repositorio contiene toda la información sobre el proyecto de desarrollo 
 * ### Boceto de la interfaz de usuario y diagramas de interacción.
    [Boceto Interface Usuario](Boceto.pdf)
    
+## Segunda fase: Desarrollo técnico de la aplicación.
+* ### Interfaces usuario: View, TableViews ...
+* ### Codificación
+   
 
-## Segunda fase: Desarrollo del MVP.
+## Tercera fase: Desarrollo del MVP.
 * ### Publicación.
 * ### Pruebas.
 * ### Desarrollo de la siguiente revisión.
+
+## Metodología de trabajo
+
+| Fechas     | Fase a desarrollar   | Trabajos específicos |
+| :---------: |:---------------------: | :----------------------:|
+| Enero 9/30 | Primera: KickStar | Selección propuesta, lista de requisitos, boceto interfaz de usuario    |
+| Enero/Febrero 30/20 | Segunda: desarrollo   | Desarrollo de la codificación e interfacesde usuario  |
+| Febrero/Marzo 20/3 | Tercera: Desarrollo del MVP | Publicación, pruebas, revisión.   |
 
    
 
