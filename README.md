@@ -19,7 +19,7 @@ Este  repositorio contiene toda la información sobre el proyecto de desarrollo 
   con el recorrido realizado.
 
 * ### Boceto de la interfaz de usuario y diagramas de interacción.
-   [Boceto de la interfaz de usuario](BocetoInterfaceUsuario.pdf)
+   [Boceto Interface Usuario](BocetoInterfaceUsuario.BocetoInterfaceUsuario.pdf)
 
 ## Segunda fase: Desarrollo del MVP.
 * ### Publicación.
