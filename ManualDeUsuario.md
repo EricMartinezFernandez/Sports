@@ -1,3 +1,9 @@
-# Esto va a ser el manual de usuario final
+# Índice
+[Bibliografía](#Bibliografía)
+
+
+# Bibliografía
+* [CocoaPods - Firebase](https://cocoapods.org/pods/Firebase)
+
 
 
