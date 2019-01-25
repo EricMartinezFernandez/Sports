@@ -154,6 +154,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="mvB-sQ-LHy"/>
                     </view>
+                    <connections>
+                        <outlet property="etiquetaMap" destination="eoq-jP-TvG" id="PE0-2a-QVi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TP6-DV-poI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -187,6 +190,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="azD-12-oOG"/>
                     </view>
+                    <connections>
+                        <outlet property="etiquetaMap" destination="0mQ-G2-qdC" id="sRX-WI-xNM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2tX-Uo-Ws7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

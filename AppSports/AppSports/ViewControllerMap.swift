@@ -7,22 +7,17 @@
 //
 
 import UIKit
-import MapKit
-import CoreLocation
 
-class ViewControllerMap: UIViewController,{
+class ViewControllerMap: UIViewController  {
     
 
-    @IBOutlet weak var etiquetaMap: MKMapView!
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
         
     }
-    
     
     
 

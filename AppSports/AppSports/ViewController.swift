@@ -8,8 +8,10 @@
 
 import UIKit
 import MapKit
+import CoreLocation
 
-class ViewController: UIViewController,{
+
+class ViewController: UIViewController {
     
     
     
@@ -30,11 +32,7 @@ class ViewController: UIViewController,{
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
         
-        if( segue.identifier == "IdentifierActividadAndar") {
-            let destino = segue.destination as! ViewControllerMap;
-            
-            destino.etiquetaMap
-        }
+        
     }
     
     
