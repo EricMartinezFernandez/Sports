@@ -68,7 +68,7 @@
         <!--Actividad Andar-->
         <scene sceneID="k4c-8M-uPD">
             <objects>
-                <viewController title="Actividad Andar" id="M3U-ZY-h5j" customClass="ViewController" customModule="AppSports" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Actividad Andar" id="M3U-ZY-h5j" customClass="ViewControllerMap" customModule="AppSports" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xFv-V7-c5h">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -82,7 +82,7 @@
                         <viewLayoutGuide key="safeArea" id="nZq-qg-t9J"/>
                     </view>
                     <connections>
-                        <outlet property="mapView" destination="P2T-iY-URO" id="6IN-Hc-2ko"/>
+                        <outlet property="etiquetaMap" destination="P2T-iY-URO" id="pkM-BZ-08d"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jCy-uG-oiO" userLabel="First Responder" sceneMemberID="firstResponder"/>
