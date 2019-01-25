@@ -105,7 +105,7 @@
         <!--Actividad Andar-->
         <scene sceneID="k4c-8M-uPD">
             <objects>
-                <viewController title="Actividad Andar" id="M3U-ZY-h5j" customClass="ViewControllerMap" customModule="AppSports" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Actividad Andar" id="M3U-ZY-h5j" customClass="ViewControllerAndar" customModule="AppSports" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xFv-V7-c5h">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -119,7 +119,7 @@
                         <viewLayoutGuide key="safeArea" id="nZq-qg-t9J"/>
                     </view>
                     <connections>
-                        <outlet property="etiquetaMap" destination="P2T-iY-URO" id="pkM-BZ-08d"/>
+                        <outlet property="etiquetaMap" destination="P2T-iY-URO" id="MU6-0d-zpG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jCy-uG-oiO" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -129,7 +129,7 @@
         <!--Actividad Correr-->
         <scene sceneID="3SQ-ok-vzO">
             <objects>
-                <viewController title="Actividad Correr" id="Ucp-BX-eQB" customClass="ViewControllerMap" customModule="AppSports" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Actividad Correr" id="Ucp-BX-eQB" customClass="ViewControllerCorrer" customModule="AppSports" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7Yf-N3-7JT">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -154,6 +154,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="mvB-sQ-LHy"/>
                     </view>
+                    <connections>
+                        <outlet property="etiquetaMap" destination="eoq-jP-TvG" id="PE0-2a-QVi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TP6-DV-poI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -162,7 +165,7 @@
         <!--Actividad Ciclismo-->
         <scene sceneID="dBv-UM-REj">
             <objects>
-                <viewController title="Actividad Ciclismo" id="wLa-lk-Gm7" customClass="ViewControllerMap" customModule="AppSports" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Actividad Ciclismo" id="wLa-lk-Gm7" customClass="ViewControllerCiclismo" customModule="AppSports" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OAw-Ng-tds">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -187,6 +190,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="azD-12-oOG"/>
                     </view>
+                    <connections>
+                        <outlet property="etiquetaMap" destination="0mQ-G2-qdC" id="sRX-WI-xNM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2tX-Uo-Ws7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
