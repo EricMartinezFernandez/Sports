@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="171f9d82-4fca-4694-8966-c5fc9ec09af3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/ManualDeUsuario.md" beforeDir="false" afterPath="$PROJECT_DIR$/ManualDeUsuario.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppSports/AppSports.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/AppSports/AppSports.xcodeproj/project.pbxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppSports/AppSports.xcworkspace/xcuserdata/8fdam09.xcuserdatad/UserInterfaceState.xcuserstate" beforeDir="false" afterPath="$PROJECT_DIR$/AppSports/AppSports.xcworkspace/xcuserdata/8fdam09.xcuserdatad/UserInterfaceState.xcuserstate" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppSports/AppSports/Base.lproj/Main.storyboard" beforeDir="false" afterPath="$PROJECT_DIR$/AppSports/AppSports/Base.lproj/Main.storyboard" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppSports/AppSports/TableViewControllerHistActividades.swift" beforeDir="false" afterPath="$PROJECT_DIR$/AppSports/AppSports/TableViewControllerHistActividades.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppSports/AppSports/ViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/AppSports/AppSports/ViewController.swift" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -31,22 +35,10 @@
         <entry file="file://$PROJECT_DIR$/ManualDeUsuario.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor>
-                <caret column="37" lean-forward="true" selection-start-column="37" selection-end-column="37" />
-              </first_editor>
+              <first_editor />
               <second_editor />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/IconoApp.png">
-          <provider selected="true" editor-type-id="images" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/200_x_200.png">
-          <provider selected="true" editor-type-id="images" />
         </entry>
       </file>
     </leaf>
@@ -118,12 +110,12 @@
       <workItem from="1548862311380" duration="1516000" />
       <workItem from="1548872569109" duration="69000" />
       <workItem from="1548872845503" duration="7000" />
-      <workItem from="1548872873386" duration="226000" />
+      <workItem from="1548872873386" duration="583000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2606000" />
+    <option name="totallyTimeSpent" value="2963000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="977" extended-state="0" />
@@ -152,9 +144,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/IconoApp.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/200_x_200.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -168,12 +157,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/IconoApp.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/ManualDeUsuario.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor>
-            <caret column="37" lean-forward="true" selection-start-column="37" selection-end-column="37" />
-          </first_editor>
+          <first_editor />
           <second_editor />
         </state>
       </provider>
