@@ -105,20 +105,38 @@
             </objects>
             <point key="canvasLocation" x="1072.8" y="133.5832083958021"/>
         </scene>
-        <!--View Controller-->
+        <!--Detalle actividad-->
         <scene sceneID="dBq-Id-T9d">
             <objects>
-                <viewController id="T0N-pJ-4L8" sceneMemberID="viewController">
+                <viewController title="Detalle actividad" id="T0N-pJ-4L8" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xEa-WP-l7t">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KuJ-T7-YvF">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <subviews>
+                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Bog-eO-Res">
+                                        <rect key="frame" x="46" y="68" width="284" height="191"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </mapView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="t8T-n4-CIC" firstAttribute="trailing" secondItem="KuJ-T7-YvF" secondAttribute="trailing" id="1v0-Oe-f3O"/>
+                            <constraint firstItem="t8T-n4-CIC" firstAttribute="bottom" secondItem="KuJ-T7-YvF" secondAttribute="bottom" id="D5a-VA-L6f"/>
+                            <constraint firstItem="KuJ-T7-YvF" firstAttribute="leading" secondItem="t8T-n4-CIC" secondAttribute="leading" id="KbE-JY-rbW"/>
+                            <constraint firstItem="KuJ-T7-YvF" firstAttribute="top" secondItem="t8T-n4-CIC" secondAttribute="top" id="s84-mi-f9B"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="t8T-n4-CIC"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AKN-xn-95d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1764" y="-607"/>
+            <point key="canvasLocation" x="1764" y="-607.64617691154433"/>
         </scene>
         <!--Actividad Andar-->
         <scene sceneID="k4c-8M-uPD">
