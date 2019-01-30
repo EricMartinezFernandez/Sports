@@ -1,3 +1,5 @@
+![nombre de la imagen](200_x_200.png)
+
 # Índice
 [Bibliografía](#Bibliografía)
 
