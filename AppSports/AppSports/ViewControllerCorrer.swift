@@ -31,6 +31,7 @@ class ViewControllerCorrer: UIViewController, CLLocationManagerDelegate{
             
             locationManager.desiredAccuracy = 1.0
             locationManager.delegate = self
+            locationManager.activityType = .fitness
             locationManager.startUpdatingLocation()
             
         } else {
@@ -43,6 +44,8 @@ class ViewControllerCorrer: UIViewController, CLLocationManagerDelegate{
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: locations[0].coordinate.latitude, longitude: locations[0].coordinate.longitude), span: MKCoordinateSpan(latitudeDelta: 0.002, longitudeDelta: 0.002))
         self.etiquetaMap.setRegion(region, animated: true)
+        
+        print(locations[0].coordinate.longitude)
         
     }
     
