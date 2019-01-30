@@ -16,6 +16,38 @@ class ViewControllerAndar: UIViewController, CLLocationManagerDelegate  {
     @IBOutlet weak var etiquetaMap: MKMapView!
     let locationManager = CLLocationManager()
     
+    //Cronómetro
+    var time = 0
+    var timer = Timer()
+    
+    
+    @IBOutlet weak var cronometro: UILabel!//Label cronometro
+    
+    @IBAction func iniciar(_ sender: Any) {//Botón Iniciar
+        
+    
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(ViewControllerAndar.action) , userInfo: nil, repeats: true)
+    
+    }
+    
+    @IBAction func reset(_ sender: Any) {
+        cronometro.text = "0"
+        time = 0
+    }
+    
+    
+    @IBAction func pausar(_ sender: Any) {//Botón Pausar
+        timer.invalidate()
+    }
+    
+    @objc func action(){
+        time += 1
+        cronometro.text = String(time)
+    }
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
