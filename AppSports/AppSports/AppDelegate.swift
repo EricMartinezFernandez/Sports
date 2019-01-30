@@ -5,8 +5,15 @@
 //  Created by  on 23/1/19.
 //  Copyright © 2019 EricJose. All rights reserved.
 //
-
 import UIKit
+
+import XCGLogger
+
+let log = XCGLogger.default
+
+import Firebase
+
+let db = Firestore.firestore()
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +23,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        FirebaseApp.configure()
         return true
     }
 

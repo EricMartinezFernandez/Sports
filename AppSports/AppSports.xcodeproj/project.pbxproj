@@ -16,6 +16,7 @@
 		C258C3E121F8BCB6003DC6F4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C258C3DF21F8BCB6003DC6F4 /* Main.storyboard */; };
 		C258C3E321F8BCB7003DC6F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C258C3E221F8BCB7003DC6F4 /* Assets.xcassets */; };
 		C258C3E621F8BCB7003DC6F4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C258C3E421F8BCB7003DC6F4 /* LaunchScreen.storyboard */; };
+		C26E1BAB22022E6200768674 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C26E1BAA22022E6200768674 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		C258C3E221F8BCB7003DC6F4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C258C3E521F8BCB7003DC6F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C258C3E721F8BCB7003DC6F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C26E1BAA22022E6200768674 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 		C258C3DA21F8BCB6003DC6F4 /* AppSports */ = {
 			isa = PBXGroup;
 			children = (
+				C26E1BAA22022E6200768674 /* GoogleService-Info.plist */,
 				C258C3DB21F8BCB6003DC6F4 /* AppDelegate.swift */,
 				C258C3DD21F8BCB6003DC6F4 /* ViewController.swift */,
 				C258C3DF21F8BCB6003DC6F4 /* Main.storyboard */,
@@ -159,6 +162,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C258C3E621F8BCB7003DC6F4 /* LaunchScreen.storyboard in Resources */,
+				C26E1BAB22022E6200768674 /* GoogleService-Info.plist in Resources */,
 				C258C3E321F8BCB7003DC6F4 /* Assets.xcassets in Resources */,
 				C258C3E121F8BCB6003DC6F4 /* Main.storyboard in Resources */,
 			);
@@ -410,6 +414,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XFG5Z39HLZ;
 				INFOPLIST_FILE = AppSports/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -428,6 +433,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XFG5Z39HLZ;
 				INFOPLIST_FILE = AppSports/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
