@@ -17,6 +17,8 @@
 		C258C3E321F8BCB7003DC6F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C258C3E221F8BCB7003DC6F4 /* Assets.xcassets */; };
 		C258C3E621F8BCB7003DC6F4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C258C3E421F8BCB7003DC6F4 /* LaunchScreen.storyboard */; };
 		C26E1BAB22022E6200768674 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C26E1BAA22022E6200768674 /* GoogleService-Info.plist */; };
+		C26E1BAD220234EE00768674 /* TableViewControllerHistActividades.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26E1BAC220234EE00768674 /* TableViewControllerHistActividades.swift */; };
+		C26E1BAF2202361900768674 /* TableViewCellActividad.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26E1BAE2202361900768674 /* TableViewCellActividad.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		C258C3E521F8BCB7003DC6F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C258C3E721F8BCB7003DC6F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C26E1BAA22022E6200768674 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C26E1BAC220234EE00768674 /* TableViewControllerHistActividades.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewControllerHistActividades.swift; sourceTree = "<group>"; };
+		C26E1BAE2202361900768674 /* TableViewCellActividad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellActividad.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +100,8 @@
 				C23599DF21FB7C4200201789 /* ViewControllerCorrer.swift */,
 				C23599E121FB7D9500201789 /* ViewControllerAndar.swift */,
 				C23599E321FB7DA300201789 /* ViewControllerCiclismo.swift */,
+				C26E1BAC220234EE00768674 /* TableViewControllerHistActividades.swift */,
+				C26E1BAE2202361900768674 /* TableViewCellActividad.swift */,
 			);
 			path = AppSports;
 			sourceTree = "<group>";
@@ -265,8 +271,10 @@
 				C258C3DE21F8BCB6003DC6F4 /* ViewController.swift in Sources */,
 				C23599E421FB7DA300201789 /* ViewControllerCiclismo.swift in Sources */,
 				C23599E021FB7C4200201789 /* ViewControllerCorrer.swift in Sources */,
+				C26E1BAF2202361900768674 /* TableViewCellActividad.swift in Sources */,
 				C258C3DC21F8BCB6003DC6F4 /* AppDelegate.swift in Sources */,
 				C23599E221FB7D9500201789 /* ViewControllerAndar.swift in Sources */,
+				C26E1BAD220234EE00768674 /* TableViewControllerHistActividades.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
