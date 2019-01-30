@@ -16,6 +16,20 @@ class ViewControllerAndar: UIViewController, CLLocationManagerDelegate  {
     @IBOutlet weak var etiquetaMap: MKMapView!
     let locationManager = CLLocationManager()
     
+    //Cronómetro
+    @IBOutlet weak var cronometro: UILabel!//Label cronometro
+    
+    @IBAction func iniciar(_ sender: Any) {//Botón iniciar
+        
+    }
+    
+    @IBAction func pausar(_ sender: Any) {
+        
+    }
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
