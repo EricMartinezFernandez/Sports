@@ -20,23 +20,30 @@ class ViewControllerCorrer: UIViewController, CLLocationManagerDelegate, MKMapVi
     let locationManager = CLLocationManager()
     
     
+    
+    
+    
     //Variables con las que guardamos los datos en Firebase
-    var arrayCoordenadas = [CLLocationCoordinate2D]()
+    var arrayCoordenadas: Array<CLLocationCoordinate2D> = []
+    var coordenadas: Array<GeoPoint> = []
     var distancia = "10km"
     var duracionActividad = "20min"
     var actividad = "correr"
     var fecha = "fecha de hoy"
     
     
-    
     //Accion del boton guardarDatos
     @IBAction func etiquetaBotonGuardarDatos(_ sender: Any) {
+        
+        for punto in arrayCoordenadas {
+            coordenadas.append(GeoPoint(latitude: punto.latitude,longitude: punto.longitude))
+        }
         
         //Guardar datos en Firestore Add a new document with a generated ID
          var ref: DocumentReference? = nil
          ref = db.collection("actividades").addDocument(data: [
          "actividad": actividad,
-         "coordenadas": arrayCoordenadas,
+         "coordenadas": coordenadas,
          "distancia": distancia,
          "duración": duracionActividad,
          "fecha": fecha,
@@ -48,6 +55,11 @@ class ViewControllerCorrer: UIViewController, CLLocationManagerDelegate, MKMapVi
             
          }
          }
+        
+        
+        
+        
+        
         
     }
     
@@ -106,7 +118,11 @@ class ViewControllerCorrer: UIViewController, CLLocationManagerDelegate, MKMapVi
         //arrayCoordenadas.append(CLLocationCoordinate2D(latitude: locations[0].coordinate.latitude, longitude: locations[0].coordinate.longitude))
         
         print(locations[0].coordinate.longitude)
+        print("-----")
+        print(locations[0].coordinate.latitude)
         
+        
+       
         
         
         //Calcular la distancia
