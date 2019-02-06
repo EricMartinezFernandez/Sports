@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Add a new document with a generated ID
+        /* Codigo para insertar datos en Firestore Add a new document with a generated ID
         var ref: DocumentReference? = nil
         ref = db.collection("users").addDocument(data: [
             "first": "Ada",
@@ -29,7 +29,7 @@ class ViewController: UIViewController {
             } else {
                 print("Document added with ID: \(ref!.documentID)")
             }
-        }
+        }*/
         
     }
     
