@@ -43,15 +43,17 @@ class ViewControllerAndar: UIViewController, CLLocationManagerDelegate, MKMapVie
         
     }
     
+    @IBAction func pausar(_ sender: Any) {//Botón Pausar
+        timer.invalidate()
+    }
+    
     @IBAction func reset(_ sender: Any) {
         cronometro.text = "0"
         segundos = 0
     }
     
     
-    @IBAction func pausar(_ sender: Any) {//Botón Pausar
-        timer.invalidate()
-    }
+ 
     
     @objc func action(){
         if (segundos >= 60){
