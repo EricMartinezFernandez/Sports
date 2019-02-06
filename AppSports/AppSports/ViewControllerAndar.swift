@@ -17,22 +17,25 @@ class ViewControllerAndar: UIViewController, CLLocationManagerDelegate  {
     let locationManager = CLLocationManager()
     
     //Cronómetro
-    var time = 0
     var timer = Timer()
+    
+    var horas = 0
+    var minutos = 0
+    var segundos = 0
+    var tiempo = ""
     
     
     @IBOutlet weak var cronometro: UILabel!//Label cronometro
     
     @IBAction func iniciar(_ sender: Any) {//Botón Iniciar
         
-    
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(ViewControllerAndar.action) , userInfo: nil, repeats: true)
-    
+        
     }
     
     @IBAction func reset(_ sender: Any) {
         cronometro.text = "0"
-        time = 0
+        segundos = 0
     }
     
     
@@ -41,11 +44,25 @@ class ViewControllerAndar: UIViewController, CLLocationManagerDelegate  {
     }
     
     @objc func action(){
-        time += 1
-        cronometro.text = String(time)
+        if (segundos >= 60){
+            minutos = minutos + 1
+            segundos = 0
+        }
+        
+        if (minutos >= 60){
+            horas = horas + 1
+            minutos = 0
+        }
+
+        segundos += 1
+        
+        
+        
+        cronometro.text = String(format: "%02d:%02d:%02d", horas, minutos, segundos)
+        
     }
     
-    
+    //Fin cronómetro
     
     
     override func viewDidLoad() {
@@ -53,7 +70,9 @@ class ViewControllerAndar: UIViewController, CLLocationManagerDelegate  {
         // Do any additional setup after loading the view.
         
         etiquetaMap.showsUserLocation = true
-        
+        //Posicion inicial de cronómetro.
+        cronometro.text = String(format: "%02d:%02d:%02d", 0, 0, 0)
+
         if CLLocationManager.locationServicesEnabled() == true {
             
             if CLLocationManager.authorizationStatus() == .restricted || CLLocationManager.authorizationStatus() == .denied || CLLocationManager.authorizationStatus() == .notDetermined {
