@@ -9,6 +9,7 @@
 import UIKit
 import MapKit
 import CoreLocation
+import Firebase
 
 class ViewControllerCorrer: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate{
 
@@ -18,12 +19,39 @@ class ViewControllerCorrer: UIViewController, CLLocationManagerDelegate, MKMapVi
     //Variable CllocationManager()
     let locationManager = CLLocationManager()
     
+    
     //Variables con las que guardamos los datos en Firebase
     var arrayCoordenadas = [CLLocationCoordinate2D]()
-    var distancia = ""
-    var duracionActividad = ""
-    var actividad = ""
-    var fecha = ""
+    var distancia = "10km"
+    var duracionActividad = "20min"
+    var actividad = "correr"
+    var fecha = "fecha de hoy"
+    
+    
+    
+    //Accion del boton guardarDatos
+    @IBAction func etiquetaBotonGuardarDatos(_ sender: Any) {
+        
+        //Guardar datos en Firestore Add a new document with a generated ID
+         var ref: DocumentReference? = nil
+         ref = db.collection("actividades").addDocument(data: [
+         "actividad": actividad,
+         "coordenadas": arrayCoordenadas,
+         "distancia": distancia,
+         "duración": duracionActividad,
+         "fecha": fecha,
+         ]) { err in
+         if let err = err {
+         print("Error adding document: \(err)")
+         } else {
+         print("Document added with ID: \(ref!.documentID)")
+            
+         }
+         }
+        
+    }
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -78,6 +106,21 @@ class ViewControllerCorrer: UIViewController, CLLocationManagerDelegate, MKMapVi
         //arrayCoordenadas.append(CLLocationCoordinate2D(latitude: locations[0].coordinate.latitude, longitude: locations[0].coordinate.longitude))
         
         print(locations[0].coordinate.longitude)
+        
+        
+        
+        //Calcular la distancia
+        // You first have to get the corner point and convert it to a coordinate
+        /*let mkmaprect = MKMapRect()
+        mkmaprect = self.etiquetaMap.visibleMapRect;
+        MKMapPoint cornerPointNW = MKMapPointMake(mapRect.origin.x, mapRect.origin.y);
+        CLLocationCoordinate2D cornerCoordinate = MKCoordinateForMapPoint(cornerPointNW);
+        
+        // Then get the center coordinate of the mapView (just a shortcut for convenience)
+        CLLocationCoordinate2D centerCoordinate = self.mapView.centerCoordinate
+        
+        // And then calculate the distance
+        CLLocationDistance distance = [cornerCoordinate distanceFromLocation:centerCoordinate];*/
         
     }
     
