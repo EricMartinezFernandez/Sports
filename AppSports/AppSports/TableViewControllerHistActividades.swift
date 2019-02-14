@@ -10,20 +10,36 @@ import UIKit
 
 class TableViewControllerHistActividades: UITableViewController {
 
+    //Objeto la actividad
+    struct Actividad {
+
+        var fecha = "a"
+        var actividad = "b"
+        var duracion = "c"
+        var distancia = "d"
+    }
     
+    var act = Actividad()
+
+
+    //Lista de actividades
+    let listaActividad: [Actividad] = []
+    
+
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
+
+
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        
+
         //Permite ativar editar las celdas para borrar la actividad
         self.navigationItem.rightBarButtonItem = self.editButtonItem
-        
+
     }
 
     // MARK: - Table view data source
@@ -35,18 +51,24 @@ class TableViewControllerHistActividades: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 6
+        
+        return listaActividad.count
     }
 
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MiCelda", for: indexPath)
 
-       // cell.etiquetaCela
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CeldaItemLista", for: indexPath) as! ItemTableViewCell
+
+        cell.etiquetaFecha.text = listaActividad[indexPath.row][act.fecha]
+        cell.etiquetaDistancia.text = listaActividad[indexPath.row]
+        cell.etiquetaDuracion.text = listaActividad[indexPath.row]
+
+        
+
 
         return cell
     }
-    
+
 
     /*
     // Override to support conditional editing of the table view.

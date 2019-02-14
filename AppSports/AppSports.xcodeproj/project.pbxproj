@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9A901D9888D5661EAFB1E24F /* Pods_AppSports.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75D3048B7C5AE6E9AAF32663 /* Pods_AppSports.framework */; };
+		C234EFD12215CE3A00E0E659 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C234EFD02215CE3900E0E659 /* ItemTableViewCell.swift */; };
 		C23599E021FB7C4200201789 /* ViewControllerCorrer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23599DF21FB7C4200201789 /* ViewControllerCorrer.swift */; };
 		C23599E221FB7D9500201789 /* ViewControllerAndar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23599E121FB7D9500201789 /* ViewControllerAndar.swift */; };
 		C23599E421FB7DA300201789 /* ViewControllerCiclismo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23599E321FB7DA300201789 /* ViewControllerCiclismo.swift */; };
@@ -25,6 +26,7 @@
 		38B30039B115927D8F896817 /* Pods-AppSports.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppSports.release.xcconfig"; path = "Pods/Target Support Files/Pods-AppSports/Pods-AppSports.release.xcconfig"; sourceTree = "<group>"; };
 		75D3048B7C5AE6E9AAF32663 /* Pods_AppSports.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppSports.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		78C1FB88543BA3A17FE06381 /* Pods-AppSports.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppSports.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AppSports/Pods-AppSports.debug.xcconfig"; sourceTree = "<group>"; };
+		C234EFD02215CE3900E0E659 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
 		C23599DF21FB7C4200201789 /* ViewControllerCorrer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerCorrer.swift; sourceTree = "<group>"; };
 		C23599E121FB7D9500201789 /* ViewControllerAndar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerAndar.swift; sourceTree = "<group>"; };
 		C23599E321FB7DA300201789 /* ViewControllerCiclismo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerCiclismo.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 				C23599E321FB7DA300201789 /* ViewControllerCiclismo.swift */,
 				C26E1BAC220234EE00768674 /* TableViewControllerHistActividades.swift */,
 				C26E1BAE2202361900768674 /* TableViewCellActividad.swift */,
+				C234EFD02215CE3900E0E659 /* ItemTableViewCell.swift */,
 			);
 			path = AppSports;
 			sourceTree = "<group>";
@@ -272,6 +275,7 @@
 				C23599E421FB7DA300201789 /* ViewControllerCiclismo.swift in Sources */,
 				C23599E021FB7C4200201789 /* ViewControllerCorrer.swift in Sources */,
 				C26E1BAF2202361900768674 /* TableViewCellActividad.swift in Sources */,
+				C234EFD12215CE3A00E0E659 /* ItemTableViewCell.swift in Sources */,
 				C258C3DC21F8BCB6003DC6F4 /* AppDelegate.swift in Sources */,
 				C23599E221FB7D9500201789 /* ViewControllerAndar.swift in Sources */,
 				C26E1BAD220234EE00768674 /* TableViewControllerHistActividades.swift in Sources */,
