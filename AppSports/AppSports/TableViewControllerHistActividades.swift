@@ -59,12 +59,9 @@ class TableViewControllerHistActividades: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CeldaItemLista", for: indexPath) as! ItemTableViewCell
 
-        cell.etiquetaFecha.text = listaActividad[indexPath.row][act.fecha]
-        cell.etiquetaDistancia.text = listaActividad[indexPath.row]
-        cell.etiquetaDuracion.text = listaActividad[indexPath.row]
-
-        
-
+        cell.etiquetaFecha.text = listaActividad[indexPath.row].fecha
+        cell.etiquetaDistancia.text = listaActividad[indexPath.row].distancia
+        cell.etiquetaDuracion.text = listaActividad[indexPath.row].duracion
 
         return cell
     }
