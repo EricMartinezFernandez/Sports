@@ -213,13 +213,47 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </mapView>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8wP-nR-w7O">
-                                        <rect key="frame" x="95" y="450" width="161" height="30"/>
+                                        <rect key="frame" x="97" y="489" width="161" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Guardar datos en Firebase"/>
                                         <connections>
                                             <action selector="etiquetaBotonGuardarDatos:" destination="Ucp-BX-eQB" eventType="touchUpInside" id="yl3-F1-XHY"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="55e-fk-T2F">
+                                        <rect key="frame" x="36" y="417" width="77" height="48"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <state key="normal" title="Iniciar"/>
+                                        <connections>
+                                            <action selector="iniciar:" destination="Ucp-BX-eQB" eventType="touchUpInside" id="JEl-Uk-GcR"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F0J-Ap-JzA">
+                                        <rect key="frame" x="143" y="417" width="88" height="48"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <state key="normal" title="Pausar"/>
+                                        <connections>
+                                            <action selector="pausar:" destination="Ucp-BX-eQB" eventType="touchUpInside" id="dra-Yg-mAf"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="isx-OX-8w9">
+                                        <rect key="frame" x="271" y="417" width="74" height="48"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <state key="normal" title="Reset"/>
+                                        <connections>
+                                            <action selector="reset:" destination="Ucp-BX-eQB" eventType="touchUpInside" id="HOf-wS-vDm"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="edE-2w-7IC">
+                                        <rect key="frame" x="9" y="310" width="359" height="99"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="60"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
@@ -234,6 +268,7 @@
                         <viewLayoutGuide key="safeArea" id="mvB-sQ-LHy"/>
                     </view>
                     <connections>
+                        <outlet property="cronometro" destination="edE-2w-7IC" id="Fe4-BK-QWH"/>
                         <outlet property="etiquetaMap" destination="eoq-jP-TvG" id="PE0-2a-QVi"/>
                     </connections>
                 </viewController>
@@ -256,6 +291,40 @@
                                         <rect key="frame" x="41" y="27" width="283" height="243"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </mapView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kod-ty-lmf">
+                                        <rect key="frame" x="41" y="428" width="77" height="48"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <state key="normal" title="Iniciar"/>
+                                        <connections>
+                                            <action selector="iniciar:" destination="wLa-lk-Gm7" eventType="touchUpInside" id="HCm-c1-cK4"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i22-ve-jcQ">
+                                        <rect key="frame" x="139" y="428" width="88" height="48"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <state key="normal" title="Pausar"/>
+                                        <connections>
+                                            <action selector="pausar:" destination="wLa-lk-Gm7" eventType="touchUpInside" id="x27-sd-MPA"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ElY-Fq-it5">
+                                        <rect key="frame" x="250" y="428" width="74" height="48"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <state key="normal" title="Reset"/>
+                                        <connections>
+                                            <action selector="reset:" destination="wLa-lk-Gm7" eventType="touchUpInside" id="5H0-AH-Hof"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iid-ej-eNd">
+                                        <rect key="frame" x="8" y="305" width="359" height="99"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="60"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
@@ -270,6 +339,7 @@
                         <viewLayoutGuide key="safeArea" id="azD-12-oOG"/>
                     </view>
                     <connections>
+                        <outlet property="cronometro" destination="iid-ej-eNd" id="Jd7-Ud-atg"/>
                         <outlet property="etiquetaMap" destination="0mQ-G2-qdC" id="sRX-WI-xNM"/>
                     </connections>
                 </viewController>
