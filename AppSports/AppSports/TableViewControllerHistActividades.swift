@@ -9,27 +9,32 @@
 import UIKit
 
 class TableViewControllerHistActividades: UITableViewController {
-
-    //Objeto la actividad
-    struct Actividad {
-
-        var fecha = "a"
-        var actividad = "b"
-        var duracion = "c"
-        var distancia = "d"
-    }
     
-    var act = Actividad()
+    
+    struct Actividad {
+        var fecha: String
+        var actividad: String
+        var duracion: String
+        var distancia: String
+    }
+
+
+
+  
 
 
     //Lista de actividades
-    let listaActividad: [Actividad] = []
+    var listaActividad: [Actividad] = []
+    
+    var person1: Actividad = Actividad(fecha:"1", actividad:"2", duracion:"3", distancia:"1")
+
     
 
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        listaActividad.append(person1)
 
 
         // Uncomment the following line to preserve selection between presentations
