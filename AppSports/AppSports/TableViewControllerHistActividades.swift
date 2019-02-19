@@ -27,6 +27,8 @@ class TableViewControllerHistActividades: UITableViewController {
     var listaActividad: [Actividad] = []
     
     var person1: Actividad = Actividad(fecha:"1", actividad:"2", duracion:"3", distancia:"1")
+    var person2: Actividad = Actividad(fecha:"3", actividad:"4", duracion:"3", distancia:"1")
+
 
     
 
@@ -35,6 +37,7 @@ class TableViewControllerHistActividades: UITableViewController {
         super.viewDidLoad()
 
         listaActividad.append(person1)
+        listaActividad.append(person2)
 
 
         // Uncomment the following line to preserve selection between presentations
