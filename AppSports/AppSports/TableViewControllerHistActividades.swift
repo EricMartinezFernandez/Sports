@@ -20,7 +20,7 @@ class TableViewControllerHistActividades: UITableViewController {
         var activity: String
         var duracion: String
         var distancia: String
-        var coordenadas: Array<GeoPoint> = []
+        var coor: Array<GeoPoint> = []
     }
 
 
@@ -72,7 +72,7 @@ class TableViewControllerHistActividades: UITableViewController {
                 
                
 
-                let lista: Actividad = Actividad(fecha: fecha, activity: act, duracion: duracion, distancia: distancia, coordenadas: cord!)
+                let lista: Actividad = Actividad(fecha: fecha, activity: act, duracion: duracion, distancia: distancia, coor: cord!)
 
 
                 self.listaActividad.append(lista)
@@ -187,14 +187,15 @@ class TableViewControllerHistActividades: UITableViewController {
             let dist = listaActividad[selectedRow].distancia
             let dur = listaActividad[selectedRow].duracion
             let nameAct = listaActividad[selectedRow].activity
-            let co = listaActividad[selectedRow].coordenadas
+            var co: Array<GeoPoint> = listaActividad[selectedRow].coor
+           
             
             
             destino?.f = fech
             destino?.d = dist
             destino?.nom = nameAct
             destino?.dur = dur
-            destino?.
+            destino?.coordenadas = co
             
             
         }

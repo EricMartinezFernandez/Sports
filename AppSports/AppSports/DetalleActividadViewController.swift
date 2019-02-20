@@ -11,8 +11,9 @@ import MapKit
 import CoreLocation
 import Firebase
 
-class DetalleActividadViewController: UIViewController {
+class DetalleActividadViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
 
+    @IBOutlet weak var etiquetaMapView: MKMapView!
     @IBOutlet weak var etiquetaNombreActividad: UILabel!
     @IBOutlet weak var etiquetaDuracion: UILabel!
     @IBOutlet weak var etiquetafecha: UILabel!
@@ -24,6 +25,8 @@ class DetalleActividadViewController: UIViewController {
     var dur:String = ""
     var coordenadas: Array<GeoPoint> = []
     
+    var arrayCllocation : Array<CLLocationCoordinate2D> = []
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,8 +35,24 @@ class DetalleActividadViewController: UIViewController {
         etiquetaNombreActividad.text = nom
         etiquetaDuracion.text = dur
         etiquetafecha.text = f
+        
+        
+        for punto in coordenadas {
+            
+        
+            
+            
+            
+            arrayCllocation.append(punto.latitude, punto.longitude)
+            coordenadas.append(GeoPoint(latitude: punto.latitude,longitude: punto.longitude))
+        }
+        
+        //Variable Mkpolyline para pintar la linea
+        let annotation2 = MKPolyline(coordinates:arrayCllocation,count:arrayCllocation.count)
+        
+        etiquetaMapView.addOverlay(annotation2)
 
-        // Do any additional setup after loading the view.
+        
     }
     
 
