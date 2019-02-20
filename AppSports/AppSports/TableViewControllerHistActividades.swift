@@ -9,21 +9,45 @@
 import UIKit
 
 class TableViewControllerHistActividades: UITableViewController {
+    
+    
+    struct Actividad {
+        var fecha: String
+        var actividad: String
+        var duracion: String
+        var distancia: String
+    }
+
+
+
+  
+
+
+    //Lista de actividades
+    var listaActividad: [Actividad] = []
+    
+    var person1: Actividad = Actividad(fecha:"1", actividad:"2", duracion:"3", distancia:"1")
+    var person2: Actividad = Actividad(fecha:"3", actividad:"4", duracion:"3", distancia:"1")
+
 
     
+
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
+
+        listaActividad.append(person1)
+        listaActividad.append(person2)
+
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        
+
         //Permite ativar editar las celdas para borrar la actividad
         self.navigationItem.rightBarButtonItem = self.editButtonItem
-        
+
     }
 
     // MARK: - Table view data source
@@ -35,18 +59,21 @@ class TableViewControllerHistActividades: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 6
+        
+        return listaActividad.count
     }
 
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MiCelda", for: indexPath)
 
-       // cell.etiquetaCela
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CeldaItemLista", for: indexPath) as! ItemTableViewCell
+
+        cell.etiquetaFecha.text = listaActividad[indexPath.row].fecha
+        cell.etiquetaDistancia.text = listaActividad[indexPath.row].distancia
+        cell.etiquetaDuracion.text = listaActividad[indexPath.row].duracion
 
         return cell
     }
-    
+
 
     /*
     // Override to support conditional editing of the table view.
