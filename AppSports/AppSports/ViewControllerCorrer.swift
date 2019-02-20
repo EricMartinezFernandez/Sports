@@ -12,6 +12,15 @@ import CoreLocation
 import Firebase
 
 class ViewControllerCorrer: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate{
+    
+
+    //Variables con las que guardamos los datos en Firebase
+    var arrayCoordenadas: Array<CLLocationCoordinate2D> = []
+    var coordenadas: Array<GeoPoint> = []
+    var distancia = ""
+    var fecha = "ayer"
+    var act = "correr"
+    var duracion = ""
 
     //Etiqueta de acceso al MkmapView
     @IBOutlet weak var etiquetaMap: MKMapView!
@@ -56,27 +65,16 @@ class ViewControllerCorrer: UIViewController, CLLocationManagerDelegate, MKMapVi
         segundos += 1
         
         cronometro.text = String(format: "%02d:%02d:%02d", horas, minutos, segundos)
+        duracion = String(format: "%02d:%02d:%02d", horas, minutos, segundos)
     }
     
     //Fin Cronómetro
     
     
-    
-    
-    
-    
-    //Variables con las que guardamos los datos en Firebase
-    var arrayCoordenadas: Array<CLLocationCoordinate2D> = []
-    var coordenadas: Array<GeoPoint> = []
-    var distancia = "10km"
-    var duracionActividad = "20min"
-    var actividad = "correr"
-    var fecha = "fecha de hoy"
-    
-    
     //Accion del boton guardarDatos
     @IBAction func etiquetaBotonGuardarDatos(_ sender: Any) {
         
+    
         for punto in arrayCoordenadas {
             coordenadas.append(GeoPoint(latitude: punto.latitude,longitude: punto.longitude))
         }
@@ -84,10 +82,10 @@ class ViewControllerCorrer: UIViewController, CLLocationManagerDelegate, MKMapVi
         //Guardar datos en Firestore Add a new document with a generated ID
          var ref: DocumentReference? = nil
          ref = db.collection("actividades").addDocument(data: [
-         "actividad": actividad,
+         "actividad": act,
          "coordenadas": coordenadas,
          "distancia": distancia,
-         "duración": duracionActividad,
+         "duración": duracion,
          "fecha": fecha,
          ]) { err in
          if let err = err {
@@ -97,11 +95,6 @@ class ViewControllerCorrer: UIViewController, CLLocationManagerDelegate, MKMapVi
             
          }
          }
-        
-        
-        
-        
-        
         
     }
     
