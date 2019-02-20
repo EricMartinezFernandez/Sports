@@ -79,6 +79,8 @@ class ViewControllerCorrer: UIViewController, CLLocationManagerDelegate, MKMapVi
             coordenadas.append(GeoPoint(latitude: punto.latitude,longitude: punto.longitude))
         }
         
+        
+        
         //Guardar datos en Firestore Add a new document with a generated ID
          var ref: DocumentReference? = nil
          ref = db.collection("actividades").addDocument(data: [

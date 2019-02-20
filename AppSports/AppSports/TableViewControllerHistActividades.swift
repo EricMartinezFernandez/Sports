@@ -20,6 +20,7 @@ class TableViewControllerHistActividades: UITableViewController {
         var activity: String
         var duracion: String
         var distancia: String
+        var coordenadas: Array<GeoPoint> = []
     }
 
 
@@ -64,14 +65,14 @@ class TableViewControllerHistActividades: UITableViewController {
                 let datos = document.data()
                 
                 let act = datos["actividad"] as? String ?? "?"
-                _ = datos["coordenadas"]
                 let distancia = datos["distancia"] as? String ?? "?"
                 let duracion = datos["duración"] as? String ?? "?"
                 let fecha = datos["fecha"] as? String ?? "?"
+                let cord = datos["coordenadas"] as? Array<GeoPoint> 
                 
                
 
-                let lista: Actividad = Actividad(fecha: fecha, activity: act, duracion: duracion, distancia: distancia)
+                let lista: Actividad = Actividad(fecha: fecha, activity: act, duracion: duracion, distancia: distancia, coordenadas: cord!)
 
 
                 self.listaActividad.append(lista)
@@ -119,7 +120,6 @@ class TableViewControllerHistActividades: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CeldaItemLista", for: indexPath) as! ItemTableViewCell
         
-    
         cell.etiquetaFecha.text = listaActividad[indexPath.row].fecha
         cell.etiquetaDistancia.text = listaActividad[indexPath.row].distancia
         cell.etiquetaDuracion.text = listaActividad[indexPath.row].duracion
@@ -170,10 +170,37 @@ class TableViewControllerHistActividades: UITableViewController {
     //In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
+        if segue.identifier == "identificadordetalle" {
+            
+            
+            
+            let pathRow = tableView.indexPathForSelectedRow
+            let selectedRow = pathRow!.row
+            
+            let destino = segue.destination as? DetalleActividadViewController
+            
+            print(selectedRow)
+            
+            
+            
+            let fech = listaActividad[selectedRow].fecha
+            let dist = listaActividad[selectedRow].distancia
+            let dur = listaActividad[selectedRow].duracion
+            let nameAct = listaActividad[selectedRow].activity
+            let co = listaActividad[selectedRow].coordenadas
+            
+            
+            destino?.f = fech
+            destino?.d = dist
+            destino?.nom = nameAct
+            destino?.dur = dur
+            destino?.
+            
+            
+        }
         
- 
+        
     }
-    
     
 
 }
