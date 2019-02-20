@@ -7,37 +7,89 @@
 //
 
 import UIKit
+import Firebase
+import Eureka
+
+
 
 class TableViewControllerHistActividades: UITableViewController {
-    
-    
+
+    //Estruct Actividad
     struct Actividad {
         var fecha: String
-        var actividad: String
+        var activity: String
         var duracion: String
         var distancia: String
     }
 
 
-
-  
-
-
     //Lista de actividades
     var listaActividad: [Actividad] = []
-    
-    var person1: Actividad = Actividad(fecha:"1", actividad:"2", duracion:"3", distancia:"1")
-    var person2: Actividad = Actividad(fecha:"3", actividad:"4", duracion:"3", distancia:"1")
+
+    //var person1: Actividad = Actividad(fecha: "1", actividad: "2", duracion: "3", distancia: "1")
+    //var person2: Actividad = Actividad(fecha: "3", actividad: "4", duracion: "3", distancia: "1")
 
 
-    
+
 
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        listaActividad.append(person1)
-        listaActividad.append(person2)
+        //Auth.auth().signInAnonymously() { (user, error) in
+
+        // UID de usuario asignado por Firebase
+        //let uid = user!.uid
+        //log.debug("Usuario: \(uid)")
+
+        db.collection("actividades").addSnapshotListener { querySnapshot, error in
+            guard let documents = querySnapshot?.documents else {
+                log.error("Error al recuperar documentos: \(error!)")
+                return
+            }
+
+            /*db.collection("actividades").whereField("propietario", isEqualTo: uid)
+                .addSnapshotListener { querySnapshot, error in
+                    guard let documents = querySnapshot?.documents else {
+                        log.error("Error al recuperar documentos: \(error!)")
+                        return
+                    }*/
+
+            // Limpiar el array de objetos
+            self.listaActividad.removeAll()
+
+            for document in documents {
+                
+                // Recuperar los datos de la lista y crear el objeto
+                let datos = document.data()
+                
+                let act = datos["actividad"] as? String ?? "?"
+                _ = datos["coordenadas"]
+                let distancia = datos["distancia"] as? String ?? "?"
+                let duracion = datos["duración"] as? String ?? "?"
+                let fecha = datos["fecha"] as? String ?? "?"
+                
+               
+
+                let lista: Actividad = Actividad(fecha: fecha, activity: act, duracion: duracion, distancia: distancia)
+
+
+                self.listaActividad.append(lista)
+                
+                
+                
+            }
+
+            // Recargar la tabla
+            self.tableView.reloadData()
+
+            //}
+
+        }
+
+
+        //listaActividad.append(person1)
+        //listaActividad.append(person2)
 
 
         // Uncomment the following line to preserve selection between presentations
@@ -59,17 +111,19 @@ class TableViewControllerHistActividades: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        
+
         return listaActividad.count
     }
 
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CeldaItemLista", for: indexPath) as! ItemTableViewCell
-
+        
+    
         cell.etiquetaFecha.text = listaActividad[indexPath.row].fecha
         cell.etiquetaDistancia.text = listaActividad[indexPath.row].distancia
         cell.etiquetaDuracion.text = listaActividad[indexPath.row].duracion
+        cell.etiquetaActividad.text = listaActividad[indexPath.row].activity
 
         return cell
     }
@@ -110,14 +164,16 @@ class TableViewControllerHistActividades: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    //In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        
+        
+ 
     }
-    */
+    
+    
 
 }
