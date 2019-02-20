@@ -19,14 +19,54 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MiCelda" id="S2n-du-Sup" customClass="TableViewCellActividad" customModule="AppSports" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CeldaItemLista" id="S2n-du-Sup" customClass="ItemTableViewCell" customModule="AppSports" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="S2n-du-Sup" id="rUN-oH-4UB">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="fecha" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ekE-PB-mgG">
+                                            <rect key="frame" x="16" y="11" width="22" height="22"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="8"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="actividad" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZXj-NL-wvM">
+                                            <rect key="frame" x="99" y="12" width="54" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="6"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="distancia" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ghg-69-Qge">
+                                            <rect key="frame" x="323" y="11" width="36" height="22"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="8"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="duracion" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4zt-qX-7Ch">
+                                            <rect key="frame" x="195" y="11" width="58" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="8"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="ekE-PB-mgG" firstAttribute="top" secondItem="rUN-oH-4UB" secondAttribute="topMargin" id="06u-eK-2wH"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="ekE-PB-mgG" secondAttribute="bottom" id="3ie-6t-5oi"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="ghg-69-Qge" secondAttribute="bottom" id="5fn-O2-cqg"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="ghg-69-Qge" secondAttribute="trailing" id="HIz-8B-VZt"/>
+                                        <constraint firstItem="ekE-PB-mgG" firstAttribute="leading" secondItem="rUN-oH-4UB" secondAttribute="leadingMargin" id="PtG-zP-UF6"/>
+                                        <constraint firstItem="ghg-69-Qge" firstAttribute="top" secondItem="rUN-oH-4UB" secondAttribute="topMargin" id="jQS-wK-UBV"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="etiquetaActividad" destination="ZXj-NL-wvM" id="4Tp-1q-wnh"/>
+                                    <outlet property="etiquetaDistancia" destination="ghg-69-Qge" id="xoO-ip-aJr"/>
+                                    <outlet property="etiquetaDuracion" destination="4zt-qX-7Ch" id="nh0-kk-AhQ"/>
+                                    <outlet property="etiquetaFecha" destination="ekE-PB-mgG" id="ZpR-VI-F69"/>
                                     <segue destination="T0N-pJ-4L8" kind="show" id="5b6-tD-Tos"/>
                                 </connections>
                             </tableViewCell>
@@ -39,7 +79,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zKA-uB-FRL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="844" y="-606"/>
+            <point key="canvasLocation" x="844" y="-606.74662668665667"/>
         </scene>
         <!--Menú Inicio-->
         <scene sceneID="tne-QT-ifu">
