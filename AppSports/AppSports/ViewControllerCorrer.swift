@@ -71,6 +71,7 @@ class ViewControllerCorrer: UIViewController, CLLocationManagerDelegate, MKMapVi
     //Fin Cronómetro
     
     
+    /*
     //Accion del boton guardarDatos
     @IBAction func etiquetaBotonGuardarDatos(_ sender: Any) {
         
@@ -99,6 +100,7 @@ class ViewControllerCorrer: UIViewController, CLLocationManagerDelegate, MKMapVi
          }
         
     }
+ */
     
     
     
@@ -199,14 +201,39 @@ class ViewControllerCorrer: UIViewController, CLLocationManagerDelegate, MKMapVi
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "guardarCorrer" {
+            let destino = segue.destination as! ViewController;
+            
+            
+            //Guardar datos en Firestore Add a new document with a generated ID
+            for punto in arrayCoordenadas {
+                coordenadas.append(GeoPoint(latitude: punto.latitude,longitude: punto.longitude))
+            }
+            
+            //Guardar datos en Firestore Add a new document with a generated ID
+            var ref: DocumentReference? = nil
+            ref = db.collection("actividades").addDocument(data: [
+                "actividad": act,
+                "coordenadas": coordenadas,
+                "distancia": distancia,
+                "duración": duracion,
+                "fecha": fecha,
+                ]) { err in
+                    if let err = err {
+                        print("Error adding document: \(err)")
+                    } else {
+                        print("Document added with ID: \(ref!.documentID)")
+                        
+                    }
+            }
+        }
     }
-    */
+    
 
 }

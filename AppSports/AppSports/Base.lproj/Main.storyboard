@@ -142,7 +142,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1072.8" y="133.5832083958021"/>
+            <point key="canvasLocation" x="958" y="156"/>
         </scene>
         <!--Detalle actividad-->
         <scene sceneID="dBq-Id-T9d">
@@ -262,6 +262,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="nZq-qg-t9J"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Actividad andar" id="Ntb-K2-rUm">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="MNX-Uq-pBc"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="cronometro" destination="Lej-vj-a0P" id="RFE-7u-h2Q"/>
                         <outlet property="etiquetaMap" destination="P2T-iY-URO" id="MU6-0d-zpG"/>
@@ -286,14 +289,6 @@
                                         <rect key="frame" x="49" y="23" width="279" height="254"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </mapView>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8wP-nR-w7O">
-                                        <rect key="frame" x="97" y="489" width="161" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Guardar datos en Firebase"/>
-                                        <connections>
-                                            <action selector="etiquetaBotonGuardarDatos:" destination="Ucp-BX-eQB" eventType="touchUpInside" id="yl3-F1-XHY"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="55e-fk-T2F">
                                         <rect key="frame" x="36" y="417" width="77" height="48"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -341,12 +336,20 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="mvB-sQ-LHy"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Actividad correr" id="ZQI-z8-c76">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="y5i-WU-cxr">
+                            <connections>
+                                <segue destination="Ocj-17-VQx" kind="unwind" identifier="guardarCorrer" unwindAction="guardarWithSegue:" id="euy-je-dj5"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="cronometro" destination="edE-2w-7IC" id="Fe4-BK-QWH"/>
                         <outlet property="etiquetaMap" destination="eoq-jP-TvG" id="PE0-2a-QVi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TP6-DV-poI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Ocj-17-VQx" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2480.8000000000002" y="133.5832083958021"/>
         </scene>
@@ -412,6 +415,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="azD-12-oOG"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Actividad ciclismo" id="oI2-Kl-EgP">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="niW-oe-d5j"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="cronometro" destination="iid-ej-eNd" id="Jd7-Ud-atg"/>
                         <outlet property="etiquetaMap" destination="0mQ-G2-qdC" id="sRX-WI-xNM"/>
