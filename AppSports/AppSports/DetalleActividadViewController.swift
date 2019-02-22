@@ -11,9 +11,15 @@ import MapKit
 import CoreLocation
 import Firebase
 
-class DetalleActividadViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
+class DetalleActividadViewController: UIViewController, MKMapViewDelegate {
 
     @IBOutlet weak var etiquetaMapView: MKMapView!
+    
+   
+    
+    //Variable CllocationManager()
+    let locationManager = CLLocationManager()
+    
     @IBOutlet weak var etiquetaNombreActividad: UILabel!
     @IBOutlet weak var etiquetaDuracion: UILabel!
     @IBOutlet weak var etiquetafecha: UILabel!
@@ -36,26 +42,48 @@ class DetalleActividadViewController: UIViewController, CLLocationManagerDelegat
         etiquetaDuracion.text = dur
         etiquetafecha.text = f
         
+        etiquetaMapView.delegate = self
         
         for punto in coordenadas {
+            arrayCllocation.append(CLLocationCoordinate2D(latitude: punto.latitude,longitude: punto.longitude))
             
-        
-            
-            
-            
-            arrayCllocation.append(punto.latitude, punto.longitude)
-            coordenadas.append(GeoPoint(latitude: punto.latitude,longitude: punto.longitude))
         }
         
-        //Variable Mkpolyline para pintar la linea
-        let annotation2 = MKPolyline(coordinates:arrayCllocation,count:arrayCllocation.count)
         
-        etiquetaMapView.addOverlay(annotation2)
-
+        for j in arrayCllocation {
+            
+    
+            let region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: j.latitude, longitude: j.longitude), span: MKCoordinateSpan(latitudeDelta: 0.002, longitudeDelta: 0.002))
+            self.etiquetaMapView.setRegion(region, animated: true)
+            
+            //Variable Mkpolyline para pintar la linea
+            let annotation2 = MKPolyline(coordinates:arrayCllocation,count:arrayCllocation.count)
+            
+            etiquetaMapView.addOverlay(annotation2)
+            
+        }
         
+        
+        
+    
     }
     
+    
+    
+    
 
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        //Return an `MKPolylineRenderer` for the `MKPolyline` in the `MKMapViewDelegate`s method
+        if let polyline = overlay as? MKPolyline {
+            let testlineRenderer = MKPolylineRenderer(polyline: polyline)
+            testlineRenderer.strokeColor = .blue
+            testlineRenderer.lineWidth = 2.0
+            return testlineRenderer
+        }
+        fatalError("Something wrong...")
+        //return MKOverlayRenderer()
+    }
+    
     /*
     // MARK: - Navigation
 

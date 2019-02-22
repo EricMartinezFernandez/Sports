@@ -137,9 +137,6 @@ class ViewControllerCorrer: UIViewController, CLLocationManagerDelegate, MKMapVi
         let region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: locations[0].coordinate.latitude, longitude: locations[0].coordinate.longitude), span: MKCoordinateSpan(latitudeDelta: 0.002, longitudeDelta: 0.002))
         self.etiquetaMap.setRegion(region, animated: true)
         
-        //Agregar un punto en el mapa
-        //let annotation = MKPointAnnotation()
-        //annotation.title = "Jose"
         
         //Relleno el array de coordenadas
         arrayCoordenadas.append(locations[0].coordinate)

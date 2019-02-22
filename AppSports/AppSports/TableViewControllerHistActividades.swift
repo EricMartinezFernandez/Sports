@@ -182,12 +182,15 @@ class TableViewControllerHistActividades: UITableViewController {
             print(selectedRow)
             
             
-            
+           
+    
             let fech = listaActividad[selectedRow].fecha
             let dist = listaActividad[selectedRow].distancia
             let dur = listaActividad[selectedRow].duracion
             let nameAct = listaActividad[selectedRow].activity
             var co: Array<GeoPoint> = listaActividad[selectedRow].coor
+            
+            destino?.title = nameAct
            
             
             
