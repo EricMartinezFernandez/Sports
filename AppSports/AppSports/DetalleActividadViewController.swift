@@ -11,69 +11,159 @@ import MapKit
 import CoreLocation
 import Firebase
 
-class DetalleActividadViewController: UIViewController, MKMapViewDelegate {
+class DetalleActividadViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
 
+
+    //Acceso al mapView
     @IBOutlet weak var etiquetaMapView: MKMapView!
     
-   
+
+
+    //Variables de control para el map y polilyne
+    var locationManager = CLLocationManager()
+    var testcoords: [CLLocationCoordinate2D] = []
     
-    //Variable CllocationManager()
-    let locationManager = CLLocationManager()
-    
+    //Acceso a los labels
     @IBOutlet weak var etiquetaNombreActividad: UILabel!
     @IBOutlet weak var etiquetaDuracion: UILabel!
     @IBOutlet weak var etiquetafecha: UILabel!
     @IBOutlet weak var etiquetaDistancia: UILabel!
-    
-    var f:String = ""
-    var d:String = ""
-    var nom:String = ""
-    var dur:String = ""
+
+    //Variables donde guardo los datos recibidos de la celda (self delegate)
+    var f: String = ""
+    var d: String = ""
+    var nom: String = ""
+    var dur: String = ""
     var coordenadas: Array<GeoPoint> = []
-    
-    var arrayCllocation : Array<CLLocationCoordinate2D> = []
-    
-    
+
+    //Array donde almaceno los geopoints convertidos
+    var arrayCllocation: Array<CLLocationCoordinate2D> = []
+
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         etiquetaDistancia.text = d
         etiquetaNombreActividad.text = nom
         etiquetaDuracion.text = dur
         etiquetafecha.text = f
-        
-        etiquetaMapView.delegate = self
-        
+
+        //Paso los geopoints a arrayCllocation convertido a este tipo de dato
         for punto in coordenadas {
-            arrayCllocation.append(CLLocationCoordinate2D(latitude: punto.latitude,longitude: punto.longitude))
-            
+            arrayCllocation.append(CLLocationCoordinate2D(latitude: punto.latitude, longitude: punto.longitude))
         }
         
+        var distance : CLLocationDistance = 0.0
         
-        for j in arrayCllocation {
+        print("hola----------------------")
+        print (arrayCllocation.count)
+        print("hola----------------------")
+        
+        for i in 0...arrayCllocation.count-1 {
             
-    
-            let region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: j.latitude, longitude: j.longitude), span: MKCoordinateSpan(latitudeDelta: 0.002, longitudeDelta: 0.002))
-            self.etiquetaMapView.setRegion(region, animated: true)
+            print(i)
             
-            //Variable Mkpolyline para pintar la linea
-            let annotation2 = MKPolyline(coordinates:arrayCllocation,count:arrayCllocation.count)
+            if i < arrayCllocation.count-2 {
+                let location1 = CLLocation(latitude: arrayCllocation[i].latitude, longitude: arrayCllocation[i].longitude)
+                let location2 = CLLocation(latitude: arrayCllocation[i+1].latitude, longitude: arrayCllocation[i+1].longitude)
+                
+                var distancia : CLLocationDistance = location1.distance(from: location2)
+                
+                distance = distance + distancia
+                
+            }
             
-            etiquetaMapView.addOverlay(annotation2)
-            
-        }
+        } //
+        
+        print("distancia--------")
+        //convert to kilometers
+        let kilometers = Double(round(distance) / 1000)
+        print(distance)
+        print(kilometers)
         
         
         
-    
+        //Funcion setUp
+        setUp()
+
+
+
     }
     
     
+    //Set up LocationManager y MapView
+    func setUp() {
+        
+        // location manager
+        locationManager = CLLocationManager()
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestAlwaysAuthorization()
+        
+        // Map view settings
+        etiquetaMapView.delegate = self
+        etiquetaMapView.mapType = MKMapType.standard
+        etiquetaMapView.isZoomEnabled = true
+        etiquetaMapView.isScrollEnabled = true
+        //etiquetaMapView.center = view.center
+        
+        // Recorro el array de Cllocation para añadir sus coodenadas a testcoords
+        for c in arrayCllocation {
+            testcoords.append(CLLocationCoordinate2D(latitude:c.latitude, longitude:c.longitude))
+        }
+        
+    
+        
+        // Añado co-ordinates para el  poly line
+        /*let coords1 = CLLocationCoordinate2D(latitude: 42.846667, longitude: -2.673056) // Vitoria
+        let coords2 = CLLocationCoordinate2D(latitude: 40.418889, longitude: -3.691944) // Madrid
+        let coords3 = CLLocationCoordinate2D(latitude: 37.383333, longitude: -5.983333) // Sevilla
+        
+        testcoords = [coords1, coords2, coords3]*/
+        
+        dibujar()
+        
+        determineCurrentLocation() // updating current location method
+    }
     
     
+    //Step 5. Update to current location
+    func determineCurrentLocation() {
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.startUpdatingLocation()
+        }
+    }
+    
+    func dibujar() {
+        
+        // Dibujar la línea
+        let testline = MKPolyline(coordinates: testcoords, count: testcoords.count)
+        etiquetaMapView.addOverlay(testline)
+        
+        // Dibujar las chinchetas
+        /*for each in 0..<testcoords.count {
+            let anno = MKPointAnnotation()
+            anno.coordinate = testcoords[each]
+            etiquetaMapView.addAnnotation(anno as MKAnnotation)
+        }*/
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        
+        // Recibir las actualizaciones de posición del GPS y centrar el mapa
+        let userLocation: CLLocation = locations[0] as CLLocation
+        let center = CLLocationCoordinate2D(latitude: userLocation.coordinate.latitude, longitude: userLocation.coordinate.longitude)
+        let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2)) // Nivel de zoom (estaba a 0.1)
+        etiquetaMapView.setRegion(region, animated: true)
+        
+        //locationManager.stopUpdatingLocation() // Esto para el GPS, no recibimos más actualizaciones
+    }
 
+
+
+
+    //Añadiendo polilyne
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
-        //Return an `MKPolylineRenderer` for the `MKPolyline` in the `MKMapViewDelegate`s method
         if let polyline = overlay as? MKPolyline {
             let testlineRenderer = MKPolylineRenderer(polyline: polyline)
             testlineRenderer.strokeColor = .blue
@@ -81,9 +171,8 @@ class DetalleActividadViewController: UIViewController, MKMapViewDelegate {
             return testlineRenderer
         }
         fatalError("Something wrong...")
-        //return MKOverlayRenderer()
     }
-    
+
     /*
     // MARK: - Navigation
 
