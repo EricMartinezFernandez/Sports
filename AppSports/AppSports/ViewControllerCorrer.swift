@@ -41,16 +41,19 @@ class ViewControllerCorrer: UIViewController, CLLocationManagerDelegate, MKMapVi
     @IBAction func iniciar(_ sender: Any) {
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(ViewControllerAndar.action) , userInfo: nil, repeats: true)
         locationManager.startUpdatingLocation()
+        etiquetaMap.showsUserLocation = true
     }
     
     @IBAction func pausar(_ sender: Any) {
            timer.invalidate()
         locationManager.stopUpdatingLocation()
+        etiquetaMap.showsUserLocation = false
     }
     
     @IBAction func reset(_ sender: Any) {
         cronometro.text = "0"
         segundos = 0
+        arrayCoordenadas.removeAll()
     }
     
     @objc func action(){

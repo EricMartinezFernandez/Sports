@@ -76,7 +76,7 @@ class DetalleActividadViewController: UIViewController, CLLocationManagerDelegat
         } //
         
         print("distancia--------")
-        //convert to kilometers
+        //conversión a km
         let kilometers = Double(round(distance) / 1000)
         print(distance)
         print(kilometers)
