@@ -40,10 +40,12 @@ class ViewControllerCorrer: UIViewController, CLLocationManagerDelegate, MKMapVi
     
     @IBAction func iniciar(_ sender: Any) {
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(ViewControllerAndar.action) , userInfo: nil, repeats: true)
+        locationManager.startUpdatingLocation()
     }
     
     @IBAction func pausar(_ sender: Any) {
            timer.invalidate()
+        locationManager.stopUpdatingLocation()
     }
     
     @IBAction func reset(_ sender: Any) {

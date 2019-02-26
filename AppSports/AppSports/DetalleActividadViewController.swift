@@ -131,6 +131,7 @@ class DetalleActividadViewController: UIViewController, CLLocationManagerDelegat
     func determineCurrentLocation() {
         if CLLocationManager.locationServicesEnabled() {
             locationManager.startUpdatingLocation()
+            
         }
     }
     
