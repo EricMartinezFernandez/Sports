@@ -18,7 +18,7 @@ class ViewControllerCorrer: UIViewController, CLLocationManagerDelegate, MKMapVi
     var arrayCoordenadas: Array<CLLocationCoordinate2D> = []
     var coordenadas: Array<GeoPoint> = []
     var distancia = ""
-    var fecha = ""
+    let date = Timestamp()
     var act = ""
     var duracion = ""
 
@@ -250,6 +250,8 @@ class ViewControllerCorrer: UIViewController, CLLocationManagerDelegate, MKMapVi
 
         if segue.identifier == "guardarCorrer" {
             
+            locationManager.stopUpdatingLocation()
+            
             let destino = segue.destination as! ViewController;
             
             distancia = distanciaRecorrida(arrayCoordenadas)
@@ -268,7 +270,7 @@ class ViewControllerCorrer: UIViewController, CLLocationManagerDelegate, MKMapVi
                 "coordenadas": coordenadas,
                 "distancia": distancia,
                 "duración": duracion,
-                "fecha": fecha,
+                "fecha": date,
                 ]) { err in
                 if let err = err {
                     print("Error adding document: \(err)")
