@@ -16,6 +16,7 @@ class TableViewControllerHistActividades: UITableViewController {
 
     //Estruct Actividad
     struct Actividad {
+        var id: String
         var fecha: String
         var activity: String
         var duracion: String
@@ -64,27 +65,23 @@ class TableViewControllerHistActividades: UITableViewController {
                 // Recuperar los datos de la lista y crear el objeto
                 let datos = document.data()
                 
+                let identificador = document.documentID
                 let act = datos["actividad"] as? String ?? "?"
                 let distancia = datos["distancia"] as? String ?? "?"
                 let duracion = datos["duración"] as? String ?? "?"
                 let fecha = datos["fecha"] as? String ?? "?"
                 let cord = datos["coordenadas"] as? Array<GeoPoint> 
                 
-               
-
-                let lista: Actividad = Actividad(fecha: fecha, activity: act, duracion: duracion, distancia: distancia, coor: cord!)
-
+                let lista: Actividad = Actividad(id: identificador, fecha: fecha, activity: act, duracion: duracion, distancia: distancia, coor: cord!)
 
                 self.listaActividad.append(lista)
-                
-                
                 
             }
 
             // Recargar la tabla
             self.tableView.reloadData()
 
-            //}
+            
 
         }
 
@@ -95,12 +92,9 @@ class TableViewControllerHistActividades: UITableViewController {
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-
         //Permite ativar editar las celdas para borrar la actividad
         self.navigationItem.rightBarButtonItem = self.editButtonItem
-
+        
     }
 
     // MARK: - Table view data source
@@ -137,17 +131,67 @@ class TableViewControllerHistActividades: UITableViewController {
     }
     */
 
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    
+ 
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
+            
+            //Verifico que celda esta seleccionada
+            let selectedRow = indexPath.row
+            
+            //Accedo a la lista de objetos para obtener el id de ese objeto
+            var idBorrar = listaActividad[selectedRow].id
+            
+            //Recupero los datos de Firebase
+            db.collection("actividades").addSnapshotListener { querySnapshot, error in
+                guard var documents = querySnapshot?.documents else {
+                    log.error("Error al recuperar documentos: \(error!)")
+                    return
+                }
+                
+            //Recorro la coleccion de actividades obtenidas de la consulta en Firebase
+                for document in documents {
+                    
+                    //Compruebo que la id de la celda es igual que la de la collecion de Firebase
+                    if document.documentID == idBorrar {
+                        
+                        //Accedo al indice de la coleccion que tiene en Firebase
+                        let indice = document.index(ofAccessibilityElement: document.data())
+                        
+                        
+                        
+                        print(indice)
+                        print("-----")
+                        print(idBorrar)
+                        
+                        //Elimino la coleccion
+                        
+                        
+                        
+                    }
+                    
+                }
+                
+                // Recargar la tabla
+                self.tableView.reloadData()
+                
+                
+                
+            }
+            
+            
+            // Borrado de la fila del data source
+            self.listaActividad.remove(at: indexPath.row)
+            self.tableView.deleteRows(at: [indexPath], with: .automatic)
+            
+            
+            
+
+        } /*else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        } */
     }
-    */
+ 
 
     /*
     // Override to support rearranging the table view.

@@ -97,7 +97,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Andar"/>
                                         <connections>
-                                            <segue destination="M3U-ZY-h5j" kind="show" identifier="IdentifierActividadAndar" id="ydb-S8-EML"/>
+                                            <segue destination="Ucp-BX-eQB" kind="show" identifier="identifierAndar" id="Tv4-7j-QU5"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ggh-fK-2VC">
@@ -105,7 +105,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Correr"/>
                                         <connections>
-                                            <segue destination="Ucp-BX-eQB" kind="show" identifier="IdentificadorActCorrer" id="ZFM-PH-avE"/>
+                                            <segue destination="Ucp-BX-eQB" kind="show" identifier="IdentifierCorrer" id="ZFM-PH-avE"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WRb-UA-bA9">
@@ -113,7 +113,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Ciclismo"/>
                                         <connections>
-                                            <segue destination="wLa-lk-Gm7" kind="show" identifier="IdentifierActCiclismo" id="JIb-D7-QYS"/>
+                                            <segue destination="Ucp-BX-eQB" kind="show" identifier="identifierCiclismo" id="raY-fx-qzW"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j8f-c3-SVA">
@@ -213,68 +213,6 @@
             </objects>
             <point key="canvasLocation" x="1764" y="-607.64617691154433"/>
         </scene>
-        <!--Actividad Andar-->
-        <scene sceneID="k4c-8M-uPD">
-            <objects>
-                <viewController title="Actividad Andar" id="M3U-ZY-h5j" customClass="ViewControllerAndar" customModule="AppSports" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="xFv-V7-c5h">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="P2T-iY-URO">
-                                <rect key="frame" x="30" y="70" width="297" height="277"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kIj-xT-y0w">
-                                <rect key="frame" x="143" y="496" width="88" height="48"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" title="Pausar"/>
-                                <connections>
-                                    <action selector="pausar:" destination="M3U-ZY-h5j" eventType="touchUpInside" id="3Tg-0w-i7W"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="64l-hi-eFi">
-                                <rect key="frame" x="16" y="496" width="77" height="48"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" title="Iniciar"/>
-                                <connections>
-                                    <action selector="iniciar:" destination="M3U-ZY-h5j" eventType="touchUpInside" id="gIG-zi-rkB"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n1f-xR-Ht3">
-                                <rect key="frame" x="285" y="496" width="74" height="48"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" title="Reset"/>
-                                <connections>
-                                    <action selector="reset:" destination="M3U-ZY-h5j" eventType="touchUpInside" id="aqE-oU-Y2P"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lej-vj-a0P">
-                                <rect key="frame" x="30" y="355" width="298" height="133"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="60"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="nZq-qg-t9J"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Actividad andar" id="Ntb-K2-rUm">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="MNX-Uq-pBc"/>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="cronometro" destination="Lej-vj-a0P" id="RFE-7u-h2Q"/>
-                        <outlet property="etiquetaMap" destination="P2T-iY-URO" id="MU6-0d-zpG"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="jCy-uG-oiO" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1732" y="133.5832083958021"/>
-        </scene>
         <!--Actividad Correr-->
         <scene sceneID="3SQ-ok-vzO">
             <objects>
@@ -352,81 +290,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TP6-DV-poI" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Ocj-17-VQx" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2480.8000000000002" y="133.5832083958021"/>
-        </scene>
-        <!--Actividad Ciclismo-->
-        <scene sceneID="dBv-UM-REj">
-            <objects>
-                <viewController title="Actividad Ciclismo" id="wLa-lk-Gm7" customClass="ViewControllerCiclismo" customModule="AppSports" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="OAw-Ng-tds">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cCJ-1Z-vCU">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                                <subviews>
-                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="0mQ-G2-qdC">
-                                        <rect key="frame" x="41" y="27" width="283" height="243"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </mapView>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kod-ty-lmf">
-                                        <rect key="frame" x="41" y="428" width="77" height="48"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                        <state key="normal" title="Iniciar"/>
-                                        <connections>
-                                            <action selector="iniciar:" destination="wLa-lk-Gm7" eventType="touchUpInside" id="HCm-c1-cK4"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i22-ve-jcQ">
-                                        <rect key="frame" x="139" y="428" width="88" height="48"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                        <state key="normal" title="Pausar"/>
-                                        <connections>
-                                            <action selector="pausar:" destination="wLa-lk-Gm7" eventType="touchUpInside" id="x27-sd-MPA"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ElY-Fq-it5">
-                                        <rect key="frame" x="250" y="428" width="74" height="48"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                        <state key="normal" title="Reset"/>
-                                        <connections>
-                                            <action selector="reset:" destination="wLa-lk-Gm7" eventType="touchUpInside" id="5H0-AH-Hof"/>
-                                        </connections>
-                                    </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iid-ej-eNd">
-                                        <rect key="frame" x="8" y="305" width="359" height="99"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="60"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="azD-12-oOG" firstAttribute="bottom" secondItem="cCJ-1Z-vCU" secondAttribute="bottom" id="Out-2r-uxA"/>
-                            <constraint firstItem="azD-12-oOG" firstAttribute="trailing" secondItem="cCJ-1Z-vCU" secondAttribute="trailing" id="XE1-iA-Dv6"/>
-                            <constraint firstItem="cCJ-1Z-vCU" firstAttribute="leading" secondItem="azD-12-oOG" secondAttribute="leading" id="aNJ-bf-qVA"/>
-                            <constraint firstItem="cCJ-1Z-vCU" firstAttribute="top" secondItem="azD-12-oOG" secondAttribute="top" id="sSw-qu-sbb"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="azD-12-oOG"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Actividad ciclismo" id="oI2-Kl-EgP">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="niW-oe-d5j"/>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="cronometro" destination="iid-ej-eNd" id="Jd7-Ud-atg"/>
-                        <outlet property="etiquetaMap" destination="0mQ-G2-qdC" id="sRX-WI-xNM"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2tX-Uo-Ws7" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3220" y="133.5832083958021"/>
+            <point key="canvasLocation" x="2062" y="36"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Upc-4k-hlN">
@@ -447,4 +311,7 @@
             <point key="canvasLocation" x="133.59999999999999" y="133.5832083958021"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Tv4-7j-QU5"/>
+    </inferredMetricsTieBreakers>
 </document>

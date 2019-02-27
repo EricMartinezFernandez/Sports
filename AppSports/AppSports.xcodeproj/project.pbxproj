@@ -11,8 +11,6 @@
 		C2079755221DD73D00499138 /* DetalleActividadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2079754221DD73D00499138 /* DetalleActividadViewController.swift */; };
 		C234EFD12215CE3A00E0E659 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C234EFD02215CE3900E0E659 /* ItemTableViewCell.swift */; };
 		C23599E021FB7C4200201789 /* ViewControllerCorrer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23599DF21FB7C4200201789 /* ViewControllerCorrer.swift */; };
-		C23599E221FB7D9500201789 /* ViewControllerAndar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23599E121FB7D9500201789 /* ViewControllerAndar.swift */; };
-		C23599E421FB7DA300201789 /* ViewControllerCiclismo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23599E321FB7DA300201789 /* ViewControllerCiclismo.swift */; };
 		C258C3DC21F8BCB6003DC6F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C258C3DB21F8BCB6003DC6F4 /* AppDelegate.swift */; };
 		C258C3DE21F8BCB6003DC6F4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C258C3DD21F8BCB6003DC6F4 /* ViewController.swift */; };
 		C258C3E121F8BCB6003DC6F4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C258C3DF21F8BCB6003DC6F4 /* Main.storyboard */; };
@@ -30,8 +28,6 @@
 		C2079754221DD73D00499138 /* DetalleActividadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalleActividadViewController.swift; sourceTree = "<group>"; };
 		C234EFD02215CE3900E0E659 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
 		C23599DF21FB7C4200201789 /* ViewControllerCorrer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerCorrer.swift; sourceTree = "<group>"; };
-		C23599E121FB7D9500201789 /* ViewControllerAndar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerAndar.swift; sourceTree = "<group>"; };
-		C23599E321FB7DA300201789 /* ViewControllerCiclismo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerCiclismo.swift; sourceTree = "<group>"; };
 		C258C3D821F8BCB6003DC6F4 /* AppSports.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppSports.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C258C3DB21F8BCB6003DC6F4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C258C3DD21F8BCB6003DC6F4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -102,8 +98,6 @@
 				C258C3E421F8BCB7003DC6F4 /* LaunchScreen.storyboard */,
 				C258C3E721F8BCB7003DC6F4 /* Info.plist */,
 				C23599DF21FB7C4200201789 /* ViewControllerCorrer.swift */,
-				C23599E121FB7D9500201789 /* ViewControllerAndar.swift */,
-				C23599E321FB7DA300201789 /* ViewControllerCiclismo.swift */,
 				C26E1BAC220234EE00768674 /* TableViewControllerHistActividades.swift */,
 				C26E1BAE2202361900768674 /* TableViewCellActividad.swift */,
 				C234EFD02215CE3900E0E659 /* ItemTableViewCell.swift */,
@@ -277,12 +271,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C258C3DE21F8BCB6003DC6F4 /* ViewController.swift in Sources */,
-				C23599E421FB7DA300201789 /* ViewControllerCiclismo.swift in Sources */,
 				C23599E021FB7C4200201789 /* ViewControllerCorrer.swift in Sources */,
 				C26E1BAF2202361900768674 /* TableViewCellActividad.swift in Sources */,
 				C234EFD12215CE3A00E0E659 /* ItemTableViewCell.swift in Sources */,
 				C258C3DC21F8BCB6003DC6F4 /* AppDelegate.swift in Sources */,
-				C23599E221FB7D9500201789 /* ViewControllerAndar.swift in Sources */,
 				C26E1BAD220234EE00768674 /* TableViewControllerHistActividades.swift in Sources */,
 				C2079755221DD73D00499138 /* DetalleActividadViewController.swift in Sources */,
 			);

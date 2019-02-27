@@ -29,58 +29,30 @@ class DetalleActividadViewController: UIViewController, CLLocationManagerDelegat
     @IBOutlet weak var etiquetafecha: UILabel!
     @IBOutlet weak var etiquetaDistancia: UILabel!
 
-    //Variables donde guardo los datos recibidos de la celda (self delegate)
+    //Variables donde voy a guardar los datos recibidos de la celda (self delegate)
     var f: String = ""
     var d: String = ""
     var nom: String = ""
     var dur: String = ""
     var coordenadas: Array<GeoPoint> = []
 
-    //Array donde almaceno los geopoints convertidos
+    //Array donde voy a almacenar los geopoints convertidos
     var arrayCllocation: Array<CLLocationCoordinate2D> = []
 
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        //Doy valor a los labels
         etiquetaDistancia.text = d
         etiquetaNombreActividad.text = nom
         etiquetaDuracion.text = dur
         etiquetafecha.text = f
 
-        //Paso los geopoints a arrayCllocation convertido a este tipo de dato
+        //Paso los geopoints a arrayCllocation, convertido a este tipo de dato
         for punto in coordenadas {
             arrayCllocation.append(CLLocationCoordinate2D(latitude: punto.latitude, longitude: punto.longitude))
         }
-        
-        var distance : CLLocationDistance = 0.0
-        
-        print("hola----------------------")
-        print (arrayCllocation.count)
-        print("hola----------------------")
-        
-        for i in 0...arrayCllocation.count-1 {
-            
-            print(i)
-            
-            if i < arrayCllocation.count-2 {
-                let location1 = CLLocation(latitude: arrayCllocation[i].latitude, longitude: arrayCllocation[i].longitude)
-                let location2 = CLLocation(latitude: arrayCllocation[i+1].latitude, longitude: arrayCllocation[i+1].longitude)
-                
-                var distancia : CLLocationDistance = location1.distance(from: location2)
-                
-                distance = distance + distancia
-                
-            }
-            
-        } //
-        
-        print("distancia--------")
-        //conversión a km
-        let kilometers = Double(round(distance) / 1000)
-        print(distance)
-        print(kilometers)
-        
         
         
         //Funcion setUp
@@ -154,7 +126,7 @@ class DetalleActividadViewController: UIViewController, CLLocationManagerDelegat
         // Recibir las actualizaciones de posición del GPS y centrar el mapa
         let userLocation: CLLocation = locations[0] as CLLocation
         let center = CLLocationCoordinate2D(latitude: userLocation.coordinate.latitude, longitude: userLocation.coordinate.longitude)
-        let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2)) // Nivel de zoom (estaba a 0.1)
+        let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.002, longitudeDelta: 0.002)) // Nivel de zoom (estaba a 0.1)
         etiquetaMapView.setRegion(region, animated: true)
         
         //locationManager.stopUpdatingLocation() // Esto para el GPS, no recibimos más actualizaciones
