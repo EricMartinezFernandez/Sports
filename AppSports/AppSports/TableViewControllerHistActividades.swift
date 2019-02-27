@@ -38,11 +38,11 @@ class TableViewControllerHistActividades: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        //Auth.auth().signInAnonymously() { (user, error) in
+        Auth.auth().signInAnonymously() { (user, error) in
 
         // UID de usuario asignado por Firebase
-        //let uid = user!.uid
-        //log.debug("Usuario: \(uid)")
+        let uid = user?.user.uid
+            log.debug("Usuario: \(String(describing: uid))")
 
         db.collection("actividades").addSnapshotListener { querySnapshot, error in
             guard let documents = querySnapshot?.documents else {
@@ -85,7 +85,7 @@ class TableViewControllerHistActividades: UITableViewController {
 
         }
 
-
+        }
         //listaActividad.append(person1)
         //listaActividad.append(person2)
 
@@ -157,15 +157,16 @@ class TableViewControllerHistActividades: UITableViewController {
                         
                         //Accedo al indice de la coleccion que tiene en Firebase
                         let indice = document.index(ofAccessibilityElement: document.data())
-                        
+
                         
                         
                         print(indice)
                         print("-----")
                         print(idBorrar)
                         
-                        //Elimino la coleccion
-                        
+                        //Elimino el documento
+                        document.reference.delete()
+
                         
                         
                     }
