@@ -17,8 +17,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-
-
     }
 
     @IBAction func guardar(segue: UIStoryboardSegue) {
@@ -26,11 +24,10 @@ class ViewController: UIViewController {
     }
 
 
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    // Funcion prepare para hacer controlar los datos antes de la navegacion
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 
+        //Variable destino para tener acceso a las variables de destino
         let destino = segue.destination as? ViewControllerCorrer
 
         if segue.identifier == "identifierCorrer" {

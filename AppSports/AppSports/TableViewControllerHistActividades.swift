@@ -8,7 +8,7 @@
 
 import UIKit
 import Firebase
-import Eureka
+
 
 
 
@@ -23,13 +23,14 @@ class TableViewControllerHistActividades: UITableViewController {
         var distancia: String
         var coor: Array<GeoPoint> = []
     }
+    
+  
 
 
     //Lista de actividades
     var listaActividad: [Actividad] = []
 
-    //var person1: Actividad = Actividad(fecha: "1", actividad: "2", duracion: "3", distancia: "1")
-    //var person2: Actividad = Actividad(fecha: "3", actividad: "4", duracion: "3", distancia: "1")
+    
 
 
 
@@ -65,11 +66,14 @@ class TableViewControllerHistActividades: UITableViewController {
                 // Recuperar los datos de la lista y crear el objeto
                 let datos = document.data()
                 
+               
                 let identificador = document.documentID
                 let act = datos["actividad"] as? String ?? "?"
                 let distancia = datos["distancia"] as? String ?? "?"
                 let duracion = datos["duración"] as? String ?? "?"
                 let fecha = datos["fecha"] as? String ?? "?"
+                
+                
                 let cord = datos["coordenadas"] as? Array<GeoPoint> 
                 
                 let lista: Actividad = Actividad(id: identificador, fecha: fecha, activity: act, duracion: duracion, distancia: distancia, coor: cord!)
@@ -81,17 +85,10 @@ class TableViewControllerHistActividades: UITableViewController {
             // Recargar la tabla
             self.tableView.reloadData()
 
-            
-
         }
 
         }
-        //listaActividad.append(person1)
-        //listaActividad.append(person2)
-
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
+        
         //Permite ativar editar las celdas para borrar la actividad
         self.navigationItem.rightBarButtonItem = self.editButtonItem
         
