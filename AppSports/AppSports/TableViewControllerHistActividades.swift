@@ -24,21 +24,13 @@ class TableViewControllerHistActividades: UITableViewController {
         var coor: Array<GeoPoint> = []
     }
     
-  
-
-
     //Lista de actividades
     var listaActividad: [Actividad] = []
-
-    
-
-
-
-
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        //Autentificacion para Firebase
         Auth.auth().signInAnonymously() { (user, error) in
 
         // UID de usuario asignado por Firebase
@@ -51,16 +43,10 @@ class TableViewControllerHistActividades: UITableViewController {
                 return
             }
 
-            /*db.collection("actividades").whereField("propietario", isEqualTo: uid)
-                .addSnapshotListener { querySnapshot, error in
-                    guard let documents = querySnapshot?.documents else {
-                        log.error("Error al recuperar documentos: \(error!)")
-                        return
-                    }*/
-
             // Limpiar el array de objetos
             self.listaActividad.removeAll()
 
+            //Recorro las actividades
             for document in documents {
                 
                 // Recuperar los datos de la lista y crear el objeto
@@ -155,26 +141,16 @@ class TableViewControllerHistActividades: UITableViewController {
                         //Accedo al indice de la coleccion que tiene en Firebase
                         let indice = document.index(ofAccessibilityElement: document.data())
 
-                        
-                        
-                        print(indice)
-                        print("-----")
-                        print(idBorrar)
-                        
                         //Elimino el documento
                         document.reference.delete()
 
-                        
-                        
                     }
                     
                 }
                 
                 // Recargar la tabla
                 self.tableView.reloadData()
-                
-                
-                
+            
             }
             
             
