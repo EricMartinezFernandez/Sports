@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ivi-2p-OrN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ivi-2p-OrN">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -230,46 +229,82 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bti-Tp-PHF">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <subviews>
-                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eoq-jP-TvG">
-                                        <rect key="frame" x="49" y="23" width="279" height="254"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eoq-jP-TvG">
+                                        <rect key="frame" x="49" y="23" width="277" height="459"/>
                                     </mapView>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="55e-fk-T2F">
-                                        <rect key="frame" x="36" y="417" width="77" height="48"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                        <state key="normal" title="Iniciar"/>
-                                        <connections>
-                                            <action selector="iniciar:" destination="Ucp-BX-eQB" eventType="touchUpInside" id="JEl-Uk-GcR"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F0J-Ap-JzA">
-                                        <rect key="frame" x="143" y="417" width="88" height="48"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                        <state key="normal" title="Pausar"/>
-                                        <connections>
-                                            <action selector="pausar:" destination="Ucp-BX-eQB" eventType="touchUpInside" id="dra-Yg-mAf"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="isx-OX-8w9">
-                                        <rect key="frame" x="271" y="417" width="74" height="48"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                        <state key="normal" title="Reset"/>
-                                        <connections>
-                                            <action selector="reset:" destination="Ucp-BX-eQB" eventType="touchUpInside" id="HOf-wS-vDm"/>
-                                        </connections>
-                                    </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="edE-2w-7IC">
-                                        <rect key="frame" x="9" y="310" width="359" height="99"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="60"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="T1c-bg-eq5">
+                                        <rect key="frame" x="49" y="559" width="279" height="44"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="55e-fk-T2F">
+                                                <rect key="frame" x="0.0" y="0.0" width="81.5" height="44"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                                <state key="normal" title="Iniciar"/>
+                                                <connections>
+                                                    <action selector="iniciar:" destination="Ucp-BX-eQB" eventType="touchUpInside" id="JEl-Uk-GcR"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F0J-Ap-JzA">
+                                                <rect key="frame" x="101.5" y="0.0" width="76" height="44"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                                <state key="normal" title="Pausar"/>
+                                                <connections>
+                                                    <action selector="pausar:" destination="Ucp-BX-eQB" eventType="touchUpInside" id="dra-Yg-mAf"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="isx-OX-8w9">
+                                                <rect key="frame" x="197.5" y="0.0" width="81.5" height="44"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                                <state key="normal" title="Reset"/>
+                                                <connections>
+                                                    <action selector="reset:" destination="Ucp-BX-eQB" eventType="touchUpInside" id="HOf-wS-vDm"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="F0J-Ap-JzA" firstAttribute="leading" secondItem="55e-fk-T2F" secondAttribute="trailing" constant="20" id="2WJ-VF-PkC"/>
+                                            <constraint firstAttribute="bottom" secondItem="isx-OX-8w9" secondAttribute="bottom" id="B0Q-YF-iQi"/>
+                                            <constraint firstAttribute="trailing" secondItem="isx-OX-8w9" secondAttribute="trailing" id="CrL-13-rvJ"/>
+                                            <constraint firstAttribute="bottom" secondItem="F0J-Ap-JzA" secondAttribute="bottom" id="CvG-lT-MIv"/>
+                                            <constraint firstAttribute="bottom" secondItem="55e-fk-T2F" secondAttribute="bottom" id="DHX-jp-mcz"/>
+                                            <constraint firstItem="isx-OX-8w9" firstAttribute="leading" secondItem="F0J-Ap-JzA" secondAttribute="trailing" constant="20" id="I0d-jX-HGp"/>
+                                            <constraint firstAttribute="trailing" secondItem="isx-OX-8w9" secondAttribute="trailing" id="IEo-be-LGc"/>
+                                            <constraint firstAttribute="bottom" secondItem="isx-OX-8w9" secondAttribute="bottom" id="Mcj-dq-PCv"/>
+                                            <constraint firstItem="F0J-Ap-JzA" firstAttribute="centerY" secondItem="T1c-bg-eq5" secondAttribute="centerY" id="Ofz-dl-i7J"/>
+                                            <constraint firstItem="F0J-Ap-JzA" firstAttribute="centerX" secondItem="T1c-bg-eq5" secondAttribute="centerX" id="QuO-in-mPF"/>
+                                            <constraint firstAttribute="trailing" secondItem="isx-OX-8w9" secondAttribute="trailing" id="UGk-Rt-SAi"/>
+                                            <constraint firstAttribute="bottom" secondItem="isx-OX-8w9" secondAttribute="bottom" id="Xba-Uj-pQ4"/>
+                                            <constraint firstItem="F0J-Ap-JzA" firstAttribute="top" secondItem="T1c-bg-eq5" secondAttribute="top" id="aRJ-pt-U1e"/>
+                                            <constraint firstAttribute="bottom" secondItem="F0J-Ap-JzA" secondAttribute="bottom" id="bAo-Gs-bDq"/>
+                                            <constraint firstItem="isx-OX-8w9" firstAttribute="top" secondItem="T1c-bg-eq5" secondAttribute="top" id="chh-kP-oYC"/>
+                                            <constraint firstItem="55e-fk-T2F" firstAttribute="leading" secondItem="T1c-bg-eq5" secondAttribute="leading" id="doi-Ji-8cT"/>
+                                            <constraint firstItem="isx-OX-8w9" firstAttribute="top" secondItem="T1c-bg-eq5" secondAttribute="top" id="kaa-7r-Lye"/>
+                                            <constraint firstItem="55e-fk-T2F" firstAttribute="leading" secondItem="T1c-bg-eq5" secondAttribute="leading" id="mUU-sZ-tJz"/>
+                                            <constraint firstItem="F0J-Ap-JzA" firstAttribute="top" secondItem="T1c-bg-eq5" secondAttribute="top" id="ndN-cr-NPK"/>
+                                            <constraint firstItem="isx-OX-8w9" firstAttribute="top" secondItem="T1c-bg-eq5" secondAttribute="top" id="sLz-RI-gzd"/>
+                                            <constraint firstItem="55e-fk-T2F" firstAttribute="top" secondItem="T1c-bg-eq5" secondAttribute="top" id="uSj-0J-uBC"/>
+                                        </constraints>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="edE-2w-7IC">
+                                        <rect key="frame" x="49" y="490" width="279" height="61"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="51"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="eoq-jP-TvG" firstAttribute="top" secondItem="bti-Tp-PHF" secondAttribute="top" constant="23" id="03P-LC-lgQ"/>
+                                    <constraint firstItem="edE-2w-7IC" firstAttribute="top" secondItem="eoq-jP-TvG" secondAttribute="bottom" constant="8" symbolic="YES" id="C4w-Zs-z0O"/>
+                                    <constraint firstAttribute="bottom" secondItem="T1c-bg-eq5" secondAttribute="bottom" id="L0h-0q-AAI"/>
+                                    <constraint firstItem="edE-2w-7IC" firstAttribute="leading" secondItem="bti-Tp-PHF" secondAttribute="leading" constant="49" id="eOc-4Y-dnR"/>
+                                    <constraint firstAttribute="trailing" secondItem="edE-2w-7IC" secondAttribute="trailing" constant="47" id="esL-UB-qFg"/>
+                                    <constraint firstItem="F0J-Ap-JzA" firstAttribute="top" secondItem="edE-2w-7IC" secondAttribute="bottom" constant="8" id="ioD-QT-WdO"/>
+                                    <constraint firstAttribute="bottom" secondItem="T1c-bg-eq5" secondAttribute="bottom" id="kjQ-mX-9G4"/>
+                                    <constraint firstItem="eoq-jP-TvG" firstAttribute="leading" secondItem="bti-Tp-PHF" secondAttribute="leading" constant="49" id="lwA-Eg-Isq"/>
+                                    <constraint firstAttribute="trailing" secondItem="T1c-bg-eq5" secondAttribute="trailing" constant="47" id="sRY-T6-oOb"/>
+                                    <constraint firstAttribute="trailing" secondItem="eoq-jP-TvG" secondAttribute="trailing" constant="49" id="tbC-At-RXK"/>
+                                    <constraint firstItem="T1c-bg-eq5" firstAttribute="leading" secondItem="bti-Tp-PHF" secondAttribute="leading" constant="49" id="wks-V8-Yje"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -296,7 +331,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TP6-DV-poI" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Ocj-17-VQx" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1881" y="31"/>
+            <point key="canvasLocation" x="1880.8" y="30.134932533733135"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Upc-4k-hlN">
