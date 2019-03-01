@@ -12,6 +12,14 @@ import CoreLocation
 import Firebase
 
 class ViewControllerCorrer: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
+    
+  
+     /*let dateformatter = DateFormatter()
+     
+     dateformatter.dateFormat = "MM-dd-yy h:mm a Z"
+     
+     let now = dateformatter.string(from: NSDate() as Date)*/
+    
 
 
     //Variables con las que guardamos los datos en Firebase
@@ -75,49 +83,13 @@ class ViewControllerCorrer: UIViewController, CLLocationManagerDelegate, MKMapVi
 
     //Fin Cronómetro
 
-
-    /*
-    //Accion del boton guardarDatos
-    @IBAction func etiquetaBotonGuardarDatos(_ sender: Any) {
-        
-    
-        for punto in arrayCoordenadas {
-            coordenadas.append(GeoPoint(latitude: punto.latitude,longitude: punto.longitude))
-        }
-        
-        
-        
-        //Guardar datos en Firestore Add a new document with a generated ID
-         var ref: DocumentReference? = nil
-         ref = db.collection("actividades").addDocument(data: [
-         "actividad": act,
-         "coordenadas": coordenadas,
-         "distancia": distancia,
-         "duración": duracion,
-         "fecha": fecha,
-         ]) { err in
-         if let err = err {
-         print("Error adding document: \(err)")
-         } else {
-         print("Document added with ID: \(ref!.documentID)")
-            
-         }
-         }
-        
-    }
- */
-    
-    
     //Funcion que calcula la distancia recorrida por el usuario
     func distanciaRecorrida(_ datos: Array<CLLocationCoordinate2D>) -> String {
         
         //Variable para la distancia
         var distance: CLLocationDistance = 0.0
         
-        print("hola----------------------")
-        print (datos.count)
-        print("hola----------------------")
-        
+       
         for i in 0...datos.count - 1 {
             
             print(i)
@@ -134,23 +106,14 @@ class ViewControllerCorrer: UIViewController, CLLocationManagerDelegate, MKMapVi
             
         }
         
-        print("distancia--------")
-        //conversión a km
+        //conversion a km
         let kilometers = Double(round(distance) / 1000)
-        print(distance)
-        print(kilometers)
         
         //Convierto kilometros (Double) a b (String)
         let b: String = String(kilometers)
         
         return b
     }
-
-
-
-
-
-
 
 
     override func viewDidLoad() {
@@ -192,34 +155,6 @@ class ViewControllerCorrer: UIViewController, CLLocationManagerDelegate, MKMapVi
         let annotation2 = MKPolyline(coordinates: arrayCoordenadas, count: arrayCoordenadas.count)
 
         etiquetaMap.addOverlay(annotation2)
-
-
-        //annotation.coordinate = CLLocationCoordinate2D(latitude: locations[0].coordinate.latitude, longitude: locations[0].coordinate.longitude)
-        //Mediante la etiquetaMap añado la anotacion
-        //etiquetaMap.addAnnotation(annotation)
-
-        //arrayCoordenadas.append(CLLocationCoordinate2D(latitude: locations[0].coordinate.latitude, longitude: locations[0].coordinate.longitude))
-
-        print(locations[0].coordinate.longitude)
-        print("-----")
-        print(locations[0].coordinate.latitude)
-
-
-
-
-
-        //Calcular la distancia
-        // You first have to get the corner point and convert it to a coordinate
-        /*let mkmaprect = MKMapRect()
-        mkmaprect = self.etiquetaMap.visibleMapRect;
-        MKMapPoint cornerPointNW = MKMapPointMake(mapRect.origin.x, mapRect.origin.y);
-        CLLocationCoordinate2D cornerCoordinate = MKCoordinateForMapPoint(cornerPointNW);
-        
-        // Then get the center coordinate of the mapView (just a shortcut for convenience)
-        CLLocationCoordinate2D centerCoordinate = self.mapView.centerCoordinate
-        
-        // And then calculate the distance
-        CLLocationDistance distance = [cornerCoordinate distanceFromLocation:centerCoordinate];*/
 
     }
 
