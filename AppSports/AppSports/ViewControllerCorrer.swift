@@ -13,13 +13,13 @@ import Firebase
 
 class ViewControllerCorrer: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
     
-    /*
-     let dateformatter = DateFormatter()
+  
+     /*let dateformatter = DateFormatter()
      
      dateformatter.dateFormat = "MM-dd-yy h:mm a Z"
      
-     let now = dateformatter.string(from: NSDate() as Date)
-    */
+     let now = dateformatter.string(from: NSDate() as Date)*/
+    
 
 
     //Variables con las que guardamos los datos en Firebase
