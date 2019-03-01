@@ -9,9 +9,6 @@
 import UIKit
 import Firebase
 
-
-
-
 class TableViewControllerHistActividades: UITableViewController {
 
     //Estruct Actividad
